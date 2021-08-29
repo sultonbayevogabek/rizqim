@@ -4,7 +4,8 @@
   "description": "Rizqim.uz freelancing platform web site",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/sultonbayevogabek/rizqim/issues"
   },
-  "homepage": "https://github.com/sultonbayevogabek/rizqim#readme"
+  "homepage": "https://github.com/sultonbayevogabek/rizqim#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  }
 }

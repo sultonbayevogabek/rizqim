@@ -1,0 +1,32 @@
+html {
+   box-sizing: border-box;
+}
+
+*, *::after, *::before {
+   box-sizing: inherit;
+}
+
+body {
+   font-family: "SFPro", sans-serif;
+   background-color: $MAIN_BG_COLOR;
+}
+
+h1, h2, h3, h4, p, ul {
+   margin: 0;
+}
+
+ul {
+   padding: 0;
+   list-style-type: none;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+.container {
+   max-width: 1220px;
+   margin: 0 auto;
+   padding: 0 10px;
+}
