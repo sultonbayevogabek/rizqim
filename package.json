@@ -1,0 +1,23 @@
+{
+  "name": "rizqim",
+  "version": "1.0.0",
+  "description": "Rizqim.uz freelancing platform web site",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sultonbayevogabek/rizqim.git"
+  },
+  "keywords": [
+    "rizqim.uz",
+    "freelancing"
+  ],
+  "author": "Sultonbayev Og'abek <sultonbayevogabek@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sultonbayevogabek/rizqim/issues"
+  },
+  "homepage": "https://github.com/sultonbayevogabek/rizqim#readme"
+}
