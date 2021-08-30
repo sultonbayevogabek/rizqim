@@ -1,1 +1,1 @@
-{"version":3,"file":"bundle.js","mappings":"AAAAA,QAAQC,IAAI,GAEZD,QAAQC,IAAI","sources":["webpack://rizqim/./public/js/main.js"],"sourcesContent":["console.log(1)\r\n\r\nconsole.log('Nimadir')"],"names":["console","log"],"sourceRoot":""}
+{"version":3,"file":"bundle.js","mappings":"AAAAA,SAASC,iBAAiB,oBAAoB","sources":["webpack://rizqim/./public/js/main.js"],"sourcesContent":["document.addEventListener('DOMContentLoaded', () => {\r\n\r\n})"],"names":["document","addEventListener"],"sourceRoot":""}

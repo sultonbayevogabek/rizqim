@@ -1,0 +1,19 @@
+.intro {
+   height: 100vh;
+   background-image: url("../img/bg-images/bg-intro.png");
+   background-position: top right;
+   background-repeat: no-repeat;
+   background-size: contain;
+}
+
+.intro__description {
+   padding-top: 158px;
+}
+
+.intro__title {
+   font-family: "SFPro", sans-serif;
+   font-weight: 700;
+   font-size: 70px;
+   line-height: 89px;
+   color: $MAIN_BLUE_COLOR;
+}

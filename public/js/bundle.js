@@ -1,2 +1,2 @@
-console.log(1),console.log("Nimadir");
+document.addEventListener("DOMContentLoaded",(()=>{}));
 //# sourceMappingURL=bundle.js.map
