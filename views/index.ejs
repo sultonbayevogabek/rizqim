@@ -1,12 +1,152 @@
 <%- include('parts/header') %>
+<!--SECTION INTRO-->
 <section class="intro">
     <%- include('components/navbar', { logo: '' }) %>
 
     <div class="intro__description">
-        <div class="container">
-            <h1 class="intro__title">Rizqingizni hallolab oling</h1>
+        <div class="flex-container">
+            <div class="intro__inner">
+                <h1 class="intro__title">Rizqingizni halollab oling</h1>
+                <p class="intro__text">Ishchi va ish beruvchini uchrashtiruvchi va yaxshilik ulashuvchi milliy
+                    platforma</p>
+                <div class="intro__links">
+                    <a class="button button-white" href="#">E'lonlar</a>
+                    <a class="button button-white" href="#">Frilanserlar</a>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <div class="intro__bg"></div>
+</section>
+
+<!--SECTION TOP PROJECTS-->
+<section class="section">
+    <div class="container">
+        <header class="section__header">
+            <h2 class="section__heading">
+                Top e'lonlar
+            </h2>
+        </header>
+        <main class="section__main">
+            <div class="slider-1 splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <%- include('components/card', {
+                            postTitle: 'Web dasturchilar kerak',
+                            viewsCount: 146,
+                            workersCount: 23,
+                            postType: 'bot',
+                            postLink: '/posts/iaj12jGjh143l2j'
+                            }) %>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
     </div>
 </section>
 
+<!--TOP FREELANCERS-->
+<section class="section">
+    <div class="container">
+        <header class="section__header">
+            <h2 class="section__heading">
+                Top frilanserlar
+            </h2>
+        </header>
+        <main class="section__main">
+            <div class="top-freelancers splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="freelancer__card" title="Muhammadjavohir Suratov">
+                                <div class="freelancer__img">
+                                    <picture>
+                                        <source srcset="/img/users/user@1x.webp 1x, /img/users/user@2x.webp 2x"
+                                                type="image/webp">
+                                        <img srcset="/img/users/user@1x.jpg 1x, /img/users/user@2x.jpg 2x">
+                                    </picture>
+                                </div>
+                                <div class="freelancer__info">
+                                    <h3 class="freelancer__name">Og'abek Sultonbayev</h3>
+                                    <span class="freelancer__level">Senior Developer</span>
+                                </div>
+                                <a class="card__link" href="/freelancers/sultonbayevogabek">Card Link</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+
+<!--SECTION SPONSORS-->
+<section class="section">
+    <div class="container">
+        <header class="section__header">
+            <h2 class="section__heading">
+                Bizning homiylar
+            </h2>
+        </header>
+        <main class="section__main">
+            <div class="slider-2 splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="sponsors__card">
+                                <picture>
+                                    <source srcset="/img/sponsors/uber1x.webp 1x, /img/sponsors/uber2x.webp 2x">
+                                    <img srcset="/img/sponsors/uber1x.png 1x, /img/sponsors/uber2x.png 2x"
+                                         alt="sponsor logo">
+                                </picture>
+                                <a class="sponsors__link" href="https://uber.com" target="_blank">Uber</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+
+<!--STATISTICS-->
+<section class="section">
+    <div class="container">
+        <header class="section__header">
+            <h2 class="section__heading">
+                Statistikalar
+            </h2>
+        </header>
+        <main class="section__main">
+            <div class="statistics">
+                <div class="statistics__card">
+                    <strong class="statistics__value">134</strong>
+                    <h3 class="statistics__title">Ish izlayotganlar</h3>
+                    <img class="statistics__icon" src="/img/icons/statistic-1.svg" alt="statistic icon">
+                </div>
+                <div class="statistics__card">
+                    <strong class="statistics__value">55</strong>
+                    <h3 class="statistics__title">Ish beruvchilar</h3>
+                    <img class="statistics__icon" src="/img/icons/statistic-2.svg" alt="statistic icon">
+                </div>
+                <div class="statistics__card">
+                    <strong class="statistics__value">67</strong>
+                    <h3 class="statistics__title">Tugallangan loyihalar</h3>
+                    <img class="statistics__icon" src="/img/icons/statistic-3.svg" alt="statistic icon">
+                </div>
+                <div class="statistics__card">
+                    <strong class="statistics__value">121</strong>
+                    <h3 class="statistics__title">Mavjud loyihalar</h3>
+                    <img class="statistics__icon" src="/img/icons/statistic-4.svg" alt="statistic icon">
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+
+<!--FOOTER-->
+<%- include('components/footer') %>
 <%- include('parts/footer') %>

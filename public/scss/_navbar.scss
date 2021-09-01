@@ -1,5 +1,5 @@
 .nav {
-   padding: 33px 0;
+   padding: 33px 0 0;
 
    .flex-container {
       align-items: center;
@@ -9,7 +9,7 @@
 .logo {
    display: inline-flex;
    align-items: center;
-   margin-right: 46px;
+   margin-right: 41px;
 }
 
 .nav__ul {
@@ -19,13 +19,12 @@
 }
 
 .nav__li:not(:last-child) {
-   margin-right: 46px;
+   margin-right: 40px;
 }
 
 .nav__ul--mixed .nav__li {
    &:nth-child(1) .nav__link,
-   &:nth-child(2) .nav__link,
-   &:nth-child(3) .nav__link {
+   &:nth-child(2) .nav__link {
       color: $MAIN_BLUE_COLOR;
 
       &::after {

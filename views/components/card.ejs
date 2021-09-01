@@ -1,0 +1,33 @@
+<%
+const trimText = text => {
+    if (text.length > 25) {
+        return text.substring(0, 25) + ' ...'
+    }
+    return text
+}
+%>
+
+<div class="card" title="<%= postTitle %>">
+    <div class="card__bg">
+        <picture>
+            <source srcset="/img/posting-images/<%= postType %>1x-1.webp 1x, /img/posting-images/<%= postType %>2x-1.webp 2x">
+            <img srcset="/img/posting-images/<%= postType %>1x-1.jpg 1x, /img/posting-images/<%= postType %>2x-1.jpg 2x" alt="posting type">
+        </picture>
+    </div>
+    <div class="card__body">
+        <h3 class="card__heading"><%= trimText(postTitle)%></h3>
+        <div class="card__statistic">
+            <div class="card__views">
+                <span><%= viewsCount %></span>
+                <img src="/img/icons/views.svg" alt="">
+            </div>
+            <div class="card__workers">
+                <span><%= workersCount %></span>
+                <img src="/img/icons/workers.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <a class="card__link" href="<%= postLink %>">
+        card link
+    </a>
+</div>

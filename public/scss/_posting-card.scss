@@ -1,0 +1,80 @@
+@import "variables";
+.card {
+   position: relative;
+   width: 100%;
+   height: 300px;
+   transition: 0.3s;
+
+   &:hover {
+      box-shadow: 0 6px 24px rgba(32, 68, 160, 0.18);
+   }
+}
+
+.card__bg {
+   position: absolute;
+   z-index: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+
+   img {
+      width: 100%;
+      object-fit: cover;
+   }
+}
+
+.card__body {
+   position: absolute;
+   z-index: 1;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   padding: 0 22px 20px 20px;
+   background: linear-gradient(180deg, rgba(32, 68, 160, 0.15) 0%,
+           rgba(32, 68, 160, 0.8) 100%);
+}
+
+.card__heading {
+   margin-bottom: 10px;
+   font-weight: 600;
+   font-size: 24px;
+   line-height: 29px;
+   color: $WHITE_COLOR;
+}
+
+.card__statistic {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.card__views, .card__workers {
+   display: flex;
+   align-items: center;
+
+   span {
+      margin-right: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 16px;
+      color: $WHITE_COLOR;
+   }
+}
+
+.card__views {
+   margin-right: 20px;
+}
+
+.card__link {
+   position: absolute;
+   z-index: 2;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   font-size: 0;
+}

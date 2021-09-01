@@ -1,0 +1,32 @@
+@import "mixins";
+@import "variables";
+
+@include media-min(1670px) {
+   .nav__ul--mixed .nav__li:nth-child(4) .nav__link {
+      color: $MAIN_BLUE_COLOR;
+
+      &::after {
+         background-color: $MAIN_BLUE_COLOR;
+      }
+   }
+}
+
+@include media-min(1670px) {
+   .nav__ul--mixed .nav__li:nth-child(4) .nav__link {
+      color: $MAIN_BLUE_COLOR;
+
+      &::after {
+         background-color: $MAIN_BLUE_COLOR;
+      }
+   }
+}
+
+@include media-min(1450px) {
+   .nav__ul--mixed .nav__li:nth-child(3) .nav__link {
+      color: $MAIN_BLUE_COLOR;
+
+      &::after {
+         background-color: $MAIN_BLUE_COLOR;
+      }
+   }
+}

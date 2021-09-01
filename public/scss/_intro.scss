@@ -1,5 +1,19 @@
+@import "variables";
+
 .intro {
-   height: 100vh;
+   position: relative;
+   max-width: 1920px;
+   margin: 0 auto;
+   height: 768px;
+}
+
+.intro__bg {
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 35%;
    background-image: url("../img/bg-images/bg-intro.png");
    background-position: top right;
    background-repeat: no-repeat;
@@ -7,13 +21,40 @@
 }
 
 .intro__description {
-   padding-top: 158px;
+   height: calc(100% - 73px);
+
+   .flex-container {
+      height: 100%;
+      align-items: center;
+   }
+}
+
+.intro__inner {
+   width: 450px;
 }
 
 .intro__title {
+   margin-bottom: 10px;
    font-family: "SFPro", sans-serif;
    font-weight: 700;
    font-size: 70px;
    line-height: 89px;
    color: $MAIN_BLUE_COLOR;
+}
+
+.intro__text {
+   margin-bottom: 40px;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 19px;
+   color: $SECONDARY_TEXT_COLOR;
+}
+
+.intro__links {
+   display: flex;
+
+   .button {
+      width: 129px;
+      margin-right: 24px;
+   }
 }
