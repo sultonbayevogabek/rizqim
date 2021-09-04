@@ -20,10 +20,10 @@
       right: 2px;
       display: flex;
       align-items: center;
-      width: 37px;
+      width: 54px;
       height: 42px;
       background-color: $WHITE_COLOR;
-      background-position: center left;
+      background-position: center;
       background-repeat: no-repeat;
    }
 
@@ -37,6 +37,10 @@
 
    &.invalid .auth__input {
       border-color: $INVALID_COLOR;
+   }
+
+   &.auth__role::after {
+      display: none;
    }
 }
 
@@ -53,7 +57,7 @@
    display: block;
    width: 100%;
    height: 46px;
-   padding: 0 15px;
+   padding: 0 55px 0 15px;
    background-color: $WHITE_COLOR;
    border: 1px solid $INPUT_BORDER_COLOR;
    font-weight: 400;
@@ -75,8 +79,6 @@
    color: $INVALID_COLOR;
 }
 
-
-
 .auth__role {
    display: flex;
    justify-content: space-between;
@@ -97,12 +99,8 @@
    }
 }
 
-.auth__submit {
-   padding-top: 20px;
-
-   .button {
-      width: 100%;
-   }
+.auth__submit .button {
+   width: 100%;
 }
 
 .auth__another {

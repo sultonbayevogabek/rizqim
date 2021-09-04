@@ -105,6 +105,18 @@ img {
    }
 }
 
+button[disabled] {
+   background-color: $DISABLE_BUTTON_COLOR;
+   border-color: $DISABLE_BUTTON_COLOR;
+
+   &:hover {
+      background-color: $DISABLE_BUTTON_COLOR;
+      border-color: $DISABLE_BUTTON_COLOR;
+      filter: none;
+      cursor: not-allowed;
+   }
+}
+
 .section {
    padding-top: 80px;
 }

@@ -1,13 +1,19 @@
-import { selectAll, addClass, removeClass } from './_functions'
+import { selectOne, selectAll, addClass, removeClass } from './_functions'
 
 export default () => {
     try {
+        const authForm = selectOne('.auth__form'),
+            authSubmit = authForm.querySelector('button[type="submit"]'),
+            authLabels = authForm.querySelectorAll('.auth__label')
+
         const inputs = selectAll('.auth__input')
+
         inputs.forEach(input => {
             input.addEventListener('paste', (e) => {
                 e.preventDefault()
             })
         })
+
         const makeInvalid = (label, errorText) => {
             label.classList.remove('valid')
             label.classList.add('invalid')
@@ -18,6 +24,7 @@ export default () => {
                 label.append(authError)
             }
         }
+
         const makeValid = label => {
             label.classList.remove('invalid')
             label.classList.add('valid')
@@ -25,6 +32,7 @@ export default () => {
                 label.children[2].remove()
             }
         }
+
         inputs.forEach(input => {
             input.addEventListener('input', e => {
                 const target = e.target
@@ -32,7 +40,7 @@ export default () => {
                 const label = e.target.parentElement
                 if (target.hasAttribute('data-input-fname')) {
                     if (!/^[a-z '`]+$/i.test(value) || value.length < 3 || value.length > 30) {
-                        makeInvalid(label, `Ism 3 tadan kam bo'lmagan va 30 tadan ko'p bo'lmagan lotin harflaridan iborat bo'lishi kerak`)
+                        makeInvalid(label, `3 tadan kam bo'lmagan va 30 tadan ko'p bo'lmagan, lotin harflaridan iborat bo'lishi kerak`)
                     } else {
                         makeValid(label)
                     }
@@ -58,8 +66,17 @@ export default () => {
                         makeValid(label)
                     }
                 }
+                if (target.hasAttribute('data-input-role')) {
+                    addClass(target.parentElement.parentElement, 'valid')
+                }
+                if (selectAll('.valid').length === authLabels.length) {
+                    authSubmit.removeAttribute('disabled')
+                } else {
+                    authSubmit.setAttribute('disabled', true)
+                }
             })
         })
     } catch (e) {
+        console.log(e)
     }
 }
