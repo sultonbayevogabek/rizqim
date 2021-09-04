@@ -2,7 +2,6 @@
 <!--SECTION INTRO-->
 <section class="intro">
     <%- include('components/navbar', { logo: '' }) %>
-
     <div class="intro__description">
         <div class="flex-container">
             <div class="intro__inner">
@@ -16,7 +15,6 @@
             </div>
         </div>
     </div>
-
     <div class="intro__bg"></div>
 </section>
 
@@ -83,6 +81,43 @@
     </div>
 </section>
 
+<!--FINISHED PROJECTS-->
+<section class="section">
+    <div class="container">
+        <header class="section__header">
+            <h2 class="section__heading">
+                Tugallangan loyihalar
+            </h2>
+        </header>
+        <main class="section__main">
+            <div class="slider-2 splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <%- include('components/card', {
+                            postTitle: 'ABM',
+                            viewsCount: 22,
+                            workersCount: null,
+                            postType: 'frontend',
+                            postLink: '/posts/iaj12jGjh143l2j'
+                            }) %>
+                        </li>
+                        <li class="splide__slide">
+                            <%- include('components/card', {
+                            postTitle: 'Harward',
+                            viewsCount: 45,
+                            workersCount: null,
+                            postType: 'frontend',
+                            postLink: '/posts/iaj12jGjh143l2j'
+                            }) %>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+
 <!--SECTION SPONSORS-->
 <section class="section">
     <div class="container">
@@ -92,7 +127,7 @@
             </h2>
         </header>
         <main class="section__main">
-            <div class="slider-2 splide">
+            <div class="slider-3 splide">
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">

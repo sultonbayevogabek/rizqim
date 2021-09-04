@@ -1,0 +1,47 @@
+<%- include('parts/header') %>
+<!--SECTION SIGNUP-->
+<section class="intro">
+    <%- include('components/navbar', { logo: '' }) %>
+    <div class="auth">
+        <div class="container">
+            <div class="auth__inner">
+                <form class="auth__form" novalidate autocomplete="off">
+                    <label class="auth__label">
+                        <span class="auth__text">Ismingiz</span>
+                        <input class="auth__input" type="text" data-input-fname>
+                    </label>
+                    <label class="auth__label">
+                        <span class="auth__text">Familiyangiz</span>
+                        <input class="auth__input" type="text" data-input-lname>
+                    </label>
+                    <label class="auth__label">
+                        <span class="auth__text">Emailingiz</span>
+                        <input class="auth__input" type="email" data-input-email>
+                    </label>
+                    <label class="auth__label">
+                        <span class="auth__text">Parolingiz</span>
+                        <input class="auth__input" type="password" data-input-password>
+                    </label>
+                    <div class="auth__role">
+                        <label>
+                            <input class="auth__radio" type="radio" name="role" value="employer">
+                            <span class="button button-outline">Ish beruvchi</span>
+                        </label>
+                        <label>
+                            <input class="auth__radio" type="radio" name="role" value="freelancer">
+                            <span class="button button-outline">Frilanser</span>
+                        </label>
+                    </div>
+                    <div class="auth__submit">
+                        <button class="button button-blue">Ro'yxatdan o'tish</button>
+                    </div>
+                </form>
+                <div class="auth__another">
+                    <span>Oldin ro'yxatdan o'tganmisiz? </span><a href="/signin">Kirish</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intro__bg"></div>
+</section>
+<%- include('parts/footer') %>

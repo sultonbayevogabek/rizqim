@@ -1,22 +1,13 @@
 @import "variables";
 
-.footer {
+.footer__inner {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
    padding-top: 40px;
    padding-bottom: 60px;
    border-top: 1px solid rgba(32, 68, 160, 0.15);
-
-   .flex-container {
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-   }
-}
-
-.footer__logo {
-   font-weight: 600;
-   font-size: 34px;
-   line-height: 41px;
-   color: $SECTION_HEADING_COLOR
 }
 
 .footer__social {

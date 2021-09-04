@@ -2,7 +2,7 @@ import { selectAll } from './_functions'
 
 export default () => {
     try {
-        const buttons = selectAll('.button')
+        const buttons = selectAll('.button-click')
 
         buttons.forEach(button => {
             button.addEventListener('click', function(e) {

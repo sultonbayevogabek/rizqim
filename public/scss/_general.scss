@@ -57,10 +57,25 @@ img {
    font-size: 16px;
    line-height: 19px;
    transition: 0.3s;
+   cursor: pointer;
 
    &:hover {
       filter: drop-shadow(0px 6px 14px rgba(51, 102, 255, 0.18));
    }
+}
+
+.button-blue {
+   background-color: $MAIN_BLUE_COLOR;
+   color: $WHITE_COLOR;
+
+   &:hover {
+      background-color: lighten($MAIN_BLUE_COLOR, 2);
+   }
+}
+
+.button-outline {
+   background-color: transparent;
+   color: $MAIN_BLUE_COLOR;
 }
 
 .button-white {
@@ -73,7 +88,7 @@ img {
    }
 }
 
-.button .circle {
+.button-click .circle {
    position: absolute;
    border-radius: 50%;
    background-color: #fff;
@@ -108,6 +123,11 @@ img {
    font-weight: 600;
    line-height: 33px;
    color: $SECTION_HEADING_COLOR;
+}
+
+.splide__track {
+   margin: -24px 0;
+   padding: 24px 0;
 }
 
 .splide__arrows {

@@ -1,0 +1,39 @@
+<%- include('parts/header') %>
+<!--SECTION SIGNUP-->
+<section class="intro">
+    <%- include('components/navbar', { logo: '' }) %>
+    <div class="auth auth-signin">
+        <div class="container">
+            <div class="auth__inner">
+                <form class="auth__form" novalidate autocomplete="off">
+                    <label class="auth__label">
+                        <span class="auth__text">Emailingiz</span>
+                        <input class="auth__input" type="email" data-input-email>
+                    </label>
+                    <label class="auth__label">
+                        <span class="auth__text">Parolingiz</span>
+                        <input class="auth__input" type="password" data-input-password>
+                    </label>
+                    <div class="auth__submit">
+                        <button class="button button-blue">Kirish</button>
+                    </div>
+                </form>
+                <div class="auth__another">
+                    <span>Oldin ro'yxatdan o'tmaganmisiz? </span><a href="/signup">Ro'yxatdan o'tish</a>
+                </div>
+                <div class="auth__by">
+                    <button class="auth__api">
+                        <img src="/img/icons/google.svg" alt="google icon" width="24">
+                        <span>Google orqali ro'yxatdan o'tish</span>
+                    </button>
+                    <button class="auth__api">
+                        <img src="/img/icons/telegram.svg" alt="telegram icon" width="24">
+                        <span>Telegram orqali ro'yxatdan o'tish</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intro__bg"></div>
+</section>
+<%- include('parts/footer') %>

@@ -9,14 +9,18 @@
    transition: 0.3s;
 
    &:hover {
-      box-shadow: 0 14px 45px -10px rgba(32, 68, 160, 0.1);
+      box-shadow: 0 6px 24px rgba(32, 68, 160, 0.18);
    }
 }
 
 .freelancer__img {
    position: relative;
    width: 101px;
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
    flex-shrink: 0;
+   overflow: hidden;
 
    img {
       width: 100%;
