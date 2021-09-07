@@ -1,0 +1,35 @@
+@import "variables";
+
+.main--project-info .flex-container {
+   align-items: flex-start;
+   justify-content: space-between;
+}
+
+.project-info {
+   width: 574px;
+}
+
+.project-info__description, .project-info__value {
+   margin-bottom: 40px;
+   font-weight: 300;
+   font-size: 16px;
+   line-height: 22px;
+   color: $LABEL_TEXT_COLOR;
+}
+
+.project-info__additional {
+   display: flex;
+   align-items: center;
+}
+
+.project-info__item:first-child {
+   margin-right: 130px;
+}
+
+.project-info__heading {
+   margin-bottom: 10px;
+   font-weight: 500;
+   font-size: 24px;
+   line-height: 29px;
+   color: $SECTION_HEADING_COLOR
+}

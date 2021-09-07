@@ -76,6 +76,20 @@ export default () => {
                         makeValid(label)
                     }
                 }
+                if (target.hasAttribute('data-input-git')) {
+                    if ((value.trim().startsWith('https://github.com/') || value.trim().startsWith('https://gitlab.com/')) && value.length > 23) {
+                        makeValid(label)
+                    } else {
+                        makeInvalid(label, `Github yoki Gitlab profilingiz manzilini to'g'ri kiritishingiz kerak. Misol uchun: https://github.com/sultonbayevogabek`)
+                    }
+                }
+                if (target.hasAttribute('data-input-portfolio-link')) {
+                    if (value.trim().startsWith('https://') && value.length > 12) {
+                        makeValid(label)
+                    } else {
+                        makeInvalid(label, `Portfoliongiz manzilini kiritishingiz kerak. Misol uchun: https://sultonbayev.uz`)
+                    }
+                }
                 if (target.hasAttribute('data-input-role')) {
                     addClass(target.parentElement.parentElement, 'valid')
                 }

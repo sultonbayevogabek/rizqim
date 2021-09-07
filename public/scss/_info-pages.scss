@@ -1,0 +1,51 @@
+@import "variables";
+
+.info-page {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+}
+
+.heading-404 {
+   margin-bottom: 18px;
+   font-family: "Nebula", sans-serif;
+   font-weight: 400;
+   font-size: 218px;
+   line-height: 251px;
+   color: $SELECT_TEXT_COLOR;
+}
+
+.text-404 {
+   display: flex;
+   align-items: center;
+
+   p, a {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 24px;
+      color: $BLACK_COLOR;
+   }
+
+   a {
+      margin-left: 10px;
+      color: $MAIN_BLUE_COLOR;
+      text-decoration: underline;
+   }
+
+   img {
+      margin-right: 10px;
+   }
+}
+
+.info-page__email-icon {
+   margin-bottom: 53px;
+}
+
+.info-page__email-text {
+   font-weight: 400;
+   font-size: 20px;
+   line-height: 24px;
+   color: $LABEL_TEXT_COLOR;
+}
