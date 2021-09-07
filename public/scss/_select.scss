@@ -1,0 +1,72 @@
+@import "variables";
+
+.select {
+   position: relative;
+   width: 282px;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 19px;
+   color: $INPUT_TEXT_COLOR;
+   cursor: pointer;
+}
+
+.select__selected {
+   position: relative;
+   display: flex;
+   align-items: center;
+   width: 282px;
+   height: 46px;
+   padding-left: 15px;
+   background-color: $WHITE_COLOR;
+   border: 1px solid $INPUT_BORDER_COLOR;
+
+   &::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      bottom: 2px;
+      width: 52px;
+      background-image: url('/img/icons/arrow-down.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+   }
+}
+
+.select__list {
+   position: absolute;
+   max-height: 200px;
+   top: 51px;
+   left: 0;
+   right: 0;
+   z-index: 3;
+   background-color: $WHITE_COLOR;
+   overflow: auto;
+
+   scrollbar-color: $INPUT_BORDER_COLOR transparent;
+
+   &::-webkit-scrollbar {
+      width: 5px;
+   }
+
+   &::-webkit-scrollbar-track {
+      border-radius: 0;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: $INPUT_BORDER_COLOR;
+   }
+}
+
+.select__item {
+   padding: 14px;
+}
+
+.select__item:hover {
+   background-color: $INPUT_BORDER_COLOR;
+   color: $SELECT_TEXT_COLOR;
+}
+
+.select__item--active {
+   display: none;
+}

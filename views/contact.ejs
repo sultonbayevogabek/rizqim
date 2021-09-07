@@ -1,0 +1,41 @@
+<%- include('parts/header') %>
+
+<header class="header header-contact">
+    <%- include('components/navbar', { logo: 'white' }) %>
+    <div class="container">
+        <h1 class="header__title">
+            <span>Biz bilan</span>
+            <br>
+            <span>aloqa qiling</span>
+        </h1>
+    </div>
+</header>
+
+<main class="main main--contact">
+    <div class="container">
+        <div class="form-wrapper">
+            <form class="form">
+                <div class="form__field">
+                    <label class="label">
+                        <span class="text">Ismingiz</span>
+                        <input class="input" type="text" data-input-fname />
+                    </label>
+                    <label class="label">
+                        <span class="text">Telefon raqamingiz</span>
+                        <input class="input" id="phone" type="tel" data-input-phone />
+                    </label>
+                </div>
+                <label class="label valid after-none">
+                    <span class="text">Izohingizni qoldiring</span>
+                    <textarea class="textarea"></textarea>
+                </label>
+                <div class="submit">
+                    <button class="button button-blue" type="submit" disabled>Jo'natish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<%- include('components/footer') %>
+<%- include('parts/footer') %>

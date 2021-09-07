@@ -1,0 +1,35 @@
+<%- include('parts/header') %>
+
+<header class="header header-completed">
+    <%- include('components/navbar', { logo: 'white' }) %>
+
+    <div class="container">
+        <h1 class="header__title">
+            <span>Rizqingizni</span>
+            <br>
+            <span>hallolab oling</span>
+        </h1>
+    </div>
+</header>
+
+<main class="main">
+    <div class="board-list">
+        <div class="grid-container">
+            <% for (let i = 0; i < 16; i++) { %>
+                <%- include('components/card', {
+                    postTitle: 'Web dasturchilar kerak',
+                    viewsCount: 146,
+                    workersCount: 23,
+                    postType: 'bot',
+                    postLink: '/posts/1'
+                }) %>
+            <% } %>
+        </div>
+        <div class="pagination-container">
+            <div id="pagination"></div>
+        </div>
+    </div>
+</main>
+
+<%- include('components/footer') %>
+<%- include('parts/footer') %>

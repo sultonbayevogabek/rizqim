@@ -2,11 +2,11 @@ import { selectOne, selectAll, addClass, removeClass } from './_functions'
 
 export default () => {
     try {
-        const authForm = selectOne('.auth__form'),
-            authSubmit = authForm.querySelector('button[type="submit"]'),
-            authLabels = authForm.querySelectorAll('.auth__label')
+        const form = selectOne('.form'),
+            submit = form.querySelector('button[type="submit"]'),
+            labels = form.querySelectorAll('.label')
 
-        const inputs = selectAll('.auth__input')
+        const inputs = selectAll('.input')
 
         inputs.forEach(input => {
             input.addEventListener('paste', (e) => {
@@ -15,19 +15,19 @@ export default () => {
         })
 
         const makeInvalid = (label, errorText) => {
-            label.classList.remove('valid')
-            label.classList.add('invalid')
-            const authError = document.createElement('small')
+            removeClass(label, 'valid')
+            addClass(label, 'invalid')
+            const error = document.createElement('small')
             if (!label.children[2]) {
-                addClass(authError, 'auth__error')
-                authError.textContent = errorText
-                label.append(authError)
+                addClass(error, 'error')
+                error.textContent = errorText
+                label.append(error)
             }
         }
 
         const makeValid = label => {
-            label.classList.remove('invalid')
-            label.classList.add('valid')
+            removeClass(label, 'invalid')
+            addClass(label, 'valid')
             if (label.children[2]) {
                 label.children[2].remove()
             }
@@ -35,18 +35,18 @@ export default () => {
 
         inputs.forEach(input => {
             input.addEventListener('input', e => {
-                const target = e.target
-                const value = target.value
-                const label = e.target.parentElement
+                let target = e.target
+                let value = target.value
+                let label = e.target.parentElement
                 if (target.hasAttribute('data-input-fname')) {
-                    if (!/^[a-z '`]+$/i.test(value) || value.length < 3 || value.length > 30) {
+                    if (!/^[a-z'`]+$/i.test(value) || value.length < 3 || value.length > 30) {
                         makeInvalid(label, `3 tadan kam bo'lmagan va 30 tadan ko'p bo'lmagan, lotin harflaridan iborat bo'lishi kerak`)
                     } else {
                         makeValid(label)
                     }
                 }
                 if (target.hasAttribute('data-input-lname')) {
-                    if (!/^[a-z '`]+$/i.test(value) || value.length < 5 || value.length > 30) {
+                    if (!/^[a-z'`]+$/i.test(value) || value.length < 5 || value.length > 30) {
                         makeInvalid(label, `Familiya 5 tadan kam bo'lmagan va 30 tadan ko'p bo'lmagan lotin harflaridan iborat bo'lishi kerak`)
                     } else {
                         makeValid(label)
@@ -66,13 +66,23 @@ export default () => {
                         makeValid(label)
                     }
                 }
+                if (target.hasAttribute('data-input-phone')) {
+                    const phoneCodes = ['33', '62', '70', '71', '78', '88', '90', '91', '93', '94', '95', '97', '99']
+                    value = value.replace(/\D/g, '')
+                    let phoneCode = value.substr(3, 2)
+                    if (value.length !== 12 || !phoneCodes.includes(phoneCode)) {
+                        makeInvalid(label, `Telefon raqamni to'g'ri formatda kiritish kerak`)
+                    } else {
+                        makeValid(label)
+                    }
+                }
                 if (target.hasAttribute('data-input-role')) {
                     addClass(target.parentElement.parentElement, 'valid')
                 }
-                if (selectAll('.valid').length === authLabels.length) {
-                    authSubmit.removeAttribute('disabled')
+                if (selectAll('.valid').length === labels.length) {
+                    submit.removeAttribute('disabled')
                 } else {
-                    authSubmit.setAttribute('disabled', true)
+                    submit.setAttribute('disabled', true)
                 }
             })
         })

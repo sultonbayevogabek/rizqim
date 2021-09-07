@@ -1,0 +1,70 @@
+<%- include('parts/header') %>
+
+<header class="header header-contact">
+    <%- include('components/navbar', { logo: 'white' }) %>
+    <div class="container">
+        <h1 class="header__title">
+            <span>Biz haqimizda</span>
+            <br>
+            <span>ma'lumot</span>
+        </h1>
+    </div>
+</header>
+
+<main class="main main--about">
+    <section class="about-text">
+        <div class="container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab aut autem consequuntur deleniti
+                dignissimos dolor eligendi eos esse est eum eveniet ex excepturi exercitationem explicabo facere facilis
+                illo ipsum iure maiores maxime natus necessitatibus neque nobis nostrum odio odit officia omnis
+                perferendis possimus qui quos repellat sed suscipit veniam voluptas voluptatum. A, accusantium
+                asperiores at commodi doloribus eum harum natus nihil nisi nostrum quis quod unde vel velit vero.
+                Aspernatur ducimus eveniet hic iure laudantium maxime neque omnis, quo ratione rem, ullam vero? Aliquam,
+                aperiam consectetur cupiditate deserunt doloremque hic, id inventore nemo nesciunt non perspiciatis quos
+                voluptatem voluptatum.</p>
+        </div>
+    </section>
+    <section class="founders">
+        <div class="container">
+            <h2 class="founders__heading">Rizqim platformasining asoschilari</h2>
+            <div class="founders__list">
+                <div class="founders__card">
+                    <div class="founders__img">
+                        <picture>
+                            <source srcset="/img/founders/founder-1@1x.webp 1x, /img/founders/founder-1@2x.webp 2x">
+                            <img srcset="/img/founders/founder-1@1x.jpg 1x, /img/founders/founder-1@2x.jpg 2x" alt="founder image">
+                        </picture>
+                    </div>
+                    <a class="founder__name" href="#">
+                        Suhrob Abduaxatov
+                    </a>
+                </div>
+                <div class="founders__card">
+                    <div class="founders__img">
+                        <picture>
+                            <source srcset="/img/founders/founder-2@1x.webp 1x, /img/founders/founder-2@2x.webp 2x">
+                            <img srcset="/img/founders/founder-2@1x.jpg 1x, /img/founders/founder-2@2x.jpg 2x" alt="founder image">
+                        </picture>
+                    </div>
+                    <a class="founder__name" href="#">
+                        Asadbek Zoirov
+                    </a>
+                </div>
+                <div class="founders__card">
+                    <div class="founders__img">
+                        <picture>
+                            <source srcset="/img/founders/founder-3@1x.webp 1x, /img/founders/founder-3@2x.webp 2x">
+                            <img srcset="/img/founders/founder-3@1x.jpg 1x, /img/founders/founder-3@2x.jpg 2x" alt="founder image">
+                        </picture>
+                    </div>
+                    <a class="founder__name" href="#">
+                        Og'abek Sultonbayev
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%- include('components/footer') %>
+<%- include('parts/footer') %>

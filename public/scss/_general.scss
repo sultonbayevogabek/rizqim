@@ -30,6 +30,10 @@ a {
 
 img {
    vertical-align: middle;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
 }
 
 .container {
@@ -43,6 +47,23 @@ img {
    max-width: 1220px;
    margin: 0 auto;
    padding: 0 10px;
+}
+
+.grid-container {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-gap: 24px;
+   max-width: 1220px;
+   margin: 0 auto;
+   padding: 0 10px;
+}
+
+.d-none {
+   display: none !important;
+}
+
+.after-none::after {
+   display: none !important;
 }
 
 .button {
@@ -76,6 +97,11 @@ img {
 .button-outline {
    background-color: transparent;
    color: $MAIN_BLUE_COLOR;
+
+   &:hover {
+      background-color: $MAIN_BLUE_COLOR;
+      color: $WHITE_COLOR;
+   }
 }
 
 .button-white {
@@ -172,4 +198,33 @@ button[disabled] {
    svg {
       display: none;
    }
+}
+
+.header {
+   height: 240px;
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+.header__title {
+   padding-top: 60px;
+   font-weight: 700;
+   font-size: 70px;
+   line-height: 112px;
+
+   span:first-child {
+      color: $WHITE_COLOR;
+   }
+
+   span:last-child {
+      color: $MAIN_BLUE_COLOR;
+   }
+}
+
+.main {
+   max-width: 1920px;
+   margin: 0 auto;
+   padding-top: 145px;
+   padding-bottom: 80px;
 }

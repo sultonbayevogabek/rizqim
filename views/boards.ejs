@@ -1,0 +1,66 @@
+<%- include('parts/header') %>
+<!--BOARDS PAGE-->
+<header class="header header-boards">
+    <%- include('components/navbar', { logo: 'white' }) %>
+
+    <div class="container">
+        <h1 class="header__title">
+            <span>Rizqingizni</span>
+            <br>
+            <span>hallolab oling</span>
+        </h1>
+    </div>
+</header>
+<main class="main">
+    <div class="filter">
+        <div class="flex-container">
+            <div class="select">
+                <div class="select__selected">Loyiha turi</div>
+                <ul class="select__list d-none">
+                    <li class="select__item">Front End</li>
+                    <li class="select__item">Dizayn</li>
+                    <li class="select__item">Telegram bot</li>
+                    <li class="select__item">Back End</li>
+                    <li class="select__item">Moushn Grafika</li>
+                    <li class="select__item">SMM</li>
+                </ul>
+            </div>
+            <div class="select">
+                <div class="select__selected">Narxi</div>
+                <ul class="select__list d-none">
+                    <li class="select__item">Amaliyot uchun</li>
+                    <li class="select__item">Pulli</li>
+                </ul>
+            </div>
+            <div class="select">
+                <div class="select__selected">Yozilishlar soni</div>
+                <ul class="select__list d-none">
+                    <li class="select__item">5-</li>
+                    <li class="select__item">5+</li>
+                    <li class="select__item">10+</li>
+                </ul>
+            </div>
+            <button class="button button-outline button-click">
+                Filterlash
+            </button>
+        </div>
+    </div>
+    <div class="board-list">
+        <div class="grid-container">
+            <% for (let i = 0; i < 16; i++) { %>
+                <%- include('components/card', {
+                postTitle: 'Web dasturchilar kerak',
+                viewsCount: 146,
+                workersCount: 23,
+                postType: 'bot',
+                postLink: '/posts/1'
+                }) %>
+            <% } %>
+        </div>
+        <div class="pagination-container">
+            <div id="pagination"></div>
+        </div>
+    </div>
+</main>
+<%- include('components/footer') %>
+<%- include('parts/footer') %>

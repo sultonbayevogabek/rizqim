@@ -8,7 +8,7 @@
    width: 282px;
 }
 
-.auth__label {
+.label {
    position: relative;
    display: block;
    margin-bottom: 20px;
@@ -22,7 +22,7 @@
       align-items: center;
       width: 54px;
       height: 42px;
-      background-color: $WHITE_COLOR;
+      background-color: transparent;
       background-position: center;
       background-repeat: no-repeat;
    }
@@ -35,16 +35,12 @@
       background-image: url('/img/icons/invalid-icon.svg');
    }
 
-   &.invalid .auth__input {
+   &.invalid .input {
       border-color: $INVALID_COLOR;
-   }
-
-   &.auth__role::after {
-      display: none;
    }
 }
 
-.auth__text {
+.text {
    display: block;
    margin-bottom: 10px;
    font-weight: 400;
@@ -53,7 +49,7 @@
    color: $LABEL_TEXT_COLOR;
 }
 
-.auth__input {
+.input {
    display: block;
    width: 100%;
    height: 46px;
@@ -70,7 +66,25 @@
    }
 }
 
-.auth__error {
+.textarea {
+   display: block;
+   width: 100%;
+   height: 150px;
+   padding: 15px;
+   background-color: $WHITE_COLOR;
+   border: 1px solid $INPUT_BORDER_COLOR;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 17px;
+   color: $INPUT_TEXT_COLOR;
+   resize: none;
+
+   &:focus {
+      outline: none;
+   }
+}
+
+.error {
    display: block;
    margin-top: 10px;
    font-weight: 400;
@@ -79,7 +93,7 @@
    color: $INVALID_COLOR;
 }
 
-.auth__role {
+.role {
    display: flex;
    justify-content: space-between;
    padding-bottom: 20px;
@@ -90,7 +104,7 @@
    }
 }
 
-.auth__radio {
+.radio {
    display: none;
 
    &:checked ~ .button-outline {
@@ -99,7 +113,7 @@
    }
 }
 
-.auth__submit .button {
+.submit .button {
    width: 100%;
 }
 
@@ -153,5 +167,25 @@
 
    .auth__submit {
       padding-top: 0;
+   }
+}
+
+.form-wrapper {
+   width: 588px;
+
+   .button {
+      display: block;
+      width: 129px;
+      margin-left: auto;
+   }
+}
+
+.form__field {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+
+   .label {
+      width: 282px;
    }
 }

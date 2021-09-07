@@ -1,0 +1,52 @@
+@import "variables";
+
+.about-text {
+   font-weight: 300;
+   font-size: 16px;
+   line-height: 19px;
+   color: $LABEL_TEXT_COLOR;
+}
+
+.founders {
+   padding-top: 80px;
+}
+
+.founders__heading {
+   margin-bottom: 20px;
+   font-weight: 600;
+   font-size: 34px;
+   line-height: 41px;
+   color: $SECTION_HEADING_COLOR;
+}
+
+.founders__list {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-column-gap: 24px;
+}
+
+.founders__card {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.founder__name {
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1;
+   display: flex;
+   align-items: flex-end;
+   padding: 30px;
+   background: linear-gradient(180deg, rgba(32, 68, 160, 0) 0%,
+           rgba(32, 68, 160, 0) 0.01%, rgba(32, 68, 160, 0.19) 62.5%,
+           rgba(32, 68, 160, 0.8) 100%);
+   font-weight: 600;
+   font-size: 24px;
+   line-height: 29px;
+   color: $WHITE_COLOR;
+}

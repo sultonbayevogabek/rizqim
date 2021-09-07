@@ -1,0 +1,66 @@
+@import "variables";
+
+.pagination-container {
+   display: flex;
+   justify-content: flex-end;
+   max-width: 1220px;
+   margin: 0 auto;
+   padding: 40px 10px 0;
+}
+
+#pagination {
+   display: inline-block;
+   vertical-align: middle;
+
+   i {
+      margin: 0 4.5px;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 24px;
+      color: $SECONDARY_TEXT_COLOR;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+   }
+
+   span a {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 24px;
+      color: $SECONDARY_TEXT_COLOR;
+      margin: 0 4.5px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+   }
+
+   a.current {
+      color: $MAIN_BLUE_COLOR;
+   }
+}
+
+.pagination-direction {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 35px;
+   height: 35px;
+   background-color: $DISABLE_BUTTON_COLOR;
+   cursor: pointer;
+   transition: 0.2s;
+
+   &:hover {
+      background-color: $MAIN_BLUE_COLOR;
+   }
+
+   &--prev {
+      margin-right: 15px;
+   }
+
+   &--next {
+      margin-left: 15px;
+   }
+}

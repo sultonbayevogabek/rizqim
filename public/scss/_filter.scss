@@ -1,0 +1,14 @@
+@import "variables";
+
+.filter {
+   margin-bottom: 40px;
+
+   .flex-container {
+      justify-content: space-between;
+      padding: 0 86px;
+   }
+
+   .button {
+      width: 129px;
+   }
+}

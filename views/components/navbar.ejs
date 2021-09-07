@@ -21,22 +21,22 @@
         </a>
         <ul class="nav__ul <%= logo ? '' : 'nav__ul--mixed' %>">
             <li class="nav__li">
-                <a class="nav__link" href="/">Bosh sahifa</a>
+                <a class="nav__link <%= path === '/' ? 'active' : null %>" href="/">Bosh sahifa</a>
             </li>
             <li class="nav__li">
-                <a class="nav__link" href="/about">Biz haqimizda</a>
+                <a class="nav__link <%= path === '/about' ? 'active' : null %>" href="/about">Biz haqimizda</a>
             </li>
             <li class="nav__li">
-                <a class="nav__link" href="/contact">Aloqa</a>
+                <a class="nav__link <%= path === '/contact' ? 'active' : null %>" href="/contact">Aloqa</a>
             </li>
             <li class="nav__li">
-                <a class="nav__link" href="/completed">Tugallangan loyihalar</a>
+                <a class="nav__link <%= path === '/completed' ? 'active' : null %>" href="/completed">Tugallangan loyihalar</a>
             </li>
             <li class="nav__li">
-                <a class="nav__link" href="/works">E'lonlar</a>
+                <a class="nav__link <%= path === '/boards' ? 'active' : null %>" href="/boards">E'lonlar</a>
             </li>
             <li class="nav__li">
-                <a class="nav__link" href="/freelancers">Frilanserlar</a>
+                <a class="nav__link <%= path === '/freelancers' ? 'active' : null %>" href="/freelancers">Frilanserlar</a>
             </li>
         </ul>
         <% if (user) { %>
