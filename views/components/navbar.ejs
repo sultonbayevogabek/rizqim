@@ -40,8 +40,8 @@
             </li>
         </ul>
         <% if (user) { %>
-            <a class="user" href="/profile" title="Shaxsiy profilga kirish">
-                <span><%= user.name %></span>
+            <a class="user" href="/<%= user.username %>" title="Shaxsiy profilga kirish">
+                <span><%= user.firstName + ' ' + user.lastName %></span>
                 <div class="user-img">
                     <picture>
                         <source srcset="/img/users/user@1x.webp 1x, /img/users/user@2x.webp 2x" type="image/webp">

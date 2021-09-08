@@ -1,0 +1,160 @@
+@import "variables";
+
+.profile__header {
+   margin-top: -90px;
+
+   .flex-container {
+      justify-content: space-between;
+      align-items: flex-end;
+   }
+}
+
+.profile__owner {
+   display: flex;
+   align-items: flex-end;
+}
+
+.profile__avatar {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 180px;
+   height: 180px;
+   margin-right: 24px;
+   border: 8px solid $WHITE_COLOR;
+   border-radius: 50%;
+   overflow: hidden;
+   filter: drop-shadow(0 6px 24px rgba(32, 68, 160, 0.18));
+
+   img {
+      width: 100%;
+      object-fit: cover;
+   }
+}
+
+.profile__name {
+   h1 {
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 34px;
+      line-height: 41px;
+      color: $SECTION_HEADING_COLOR;
+   }
+
+   p {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      color: $SECONDARY_TEXT_COLOR;
+   }
+}
+
+.profile__mail {
+   position: relative;
+   bottom: 20px;
+   display: flex;
+   align-items: center;
+   height: 48px;
+   padding: 10px;
+   background-color: $WHITE_COLOR;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 24px;
+   color: $BLACK_COLOR;
+
+   &:hover {
+      filter: drop-shadow(0 6px 24px rgba(32, 68, 160, 0.18));
+   }
+}
+
+.profile__mail-icon {
+   position: relative;
+   margin-right: 10px;
+
+   &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      top: 0;
+      right: -3px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50px;
+      background-color: $INVALID_COLOR;
+   }
+
+   &--unread::after {
+      display: block;
+   }
+}
+
+.profile__main {
+   .container {
+      display: grid;
+      grid-template-columns: 306px 854px;
+      grid-column-gap: 40px;
+      padding-top: 60px;
+   }
+}
+
+.profile__sidebar {
+   padding: 26px 24px 6px;
+   background-color: $WHITE_COLOR;
+   box-shadow: 0 6px 24px rgba(32, 68, 160, 0.18);
+}
+
+.profile__sidebar__item {
+   margin-bottom: 20px;
+   padding-bottom: 20px;
+   border-bottom: 1px solid $SIDEBAR_BORDER_COLOR;
+}
+
+.profile__sidebar__header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 15px;
+}
+
+.profile__sidebar__heading {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 24px;
+   color: $SELECT_TEXT_COLOR;
+}
+
+.profile__sidebar__edit {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 16px;
+   height: 16px;
+   cursor: pointer;
+
+   img {
+      width: 100%;
+   }
+}
+
+.profile__sidebar__add {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 20px;
+   height: 20px;
+   cursor: pointer;
+
+   img {
+      width: 100%;
+   }
+}
+
+.profile__sidebar__text {
+   font-weight: 300;
+   font-size: 16px;
+   line-height: 19px;
+   color: $SECONDARY_TEXT_COLOR;
+}

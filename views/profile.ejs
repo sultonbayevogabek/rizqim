@@ -1,0 +1,74 @@
+<%- include('parts/header') %>
+
+<header class="header header-profile">
+    <%- include('components/navbar', { logo: 'white' }) %>
+</header>
+
+<section class="profile">
+    <header class="profile__header">
+        <div class="flex-container">
+            <div class="profile__owner">
+                <div class="profile__avatar">
+                    <picture>
+                        <source srcset="/img/users/user@1x.webp 1x, /img/users/user@2x.webp 2x" type="image/webp">
+                        <img srcset="/img/users/user@1x.jpg 1x, /img/users/user@2x.jpg 2x">
+                    </picture>
+                </div>
+                <div class="profile__name">
+                    <h1><%= user.firstName + ' ' + user.lastName %></h1>
+                    <p>Web Developer</p>
+                </div>
+            </div>
+            <a class="profile__mail" href="/<%= user.username %>/mail">
+                <span class="profile__mail-icon profile__mail-icon--unread">
+                    <img src="/img/icons/email.svg" alt="email icon">
+                </span>
+                <span>Xabarlar</span>
+            </a>
+        </div>
+    </header>
+    <main class="profile__main">
+        <div class="container">
+            <aside class="profile__sidebar">
+                <div class="profile__sidebar__item">
+                    <div class="profile__sidebar__header">
+                        <h2 class="profile__sidebar__heading">Ism</h2>
+                        <span class="profile__sidebar__edit">
+                            <img src="/img/icons/edit.svg" alt="edit icon">
+                        </span>
+                    </div>
+                    <div class="profile__sidebar__content">
+                        <p class="profile__sidebar__text">Og'abek Sultonbayev</p>
+                    </div>
+                </div>
+                <div class="profile__sidebar__item">
+                    <div class="profile__sidebar__header">
+                        <h2 class="profile__sidebar__heading">O'zingiz haqingizda</h2>
+                        <span class="profile__sidebar__edit">
+                            <img src="/img/icons/edit.svg" alt="edit icon">
+                        </span>
+                    </div>
+                    <div class="profile__sidebar__content">
+                        <p class="profile__sidebar__text">Yoshim 21da. Full Stack dasturchiman. Bu sohada 2 yillik tajribam bor. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
+                    </div>
+                </div>
+                <div class="profile__sidebar__item">
+                    <div class="profile__sidebar__header">
+                        <h2 class="profile__sidebar__heading">Portfolio</h2>
+                        <span class="profile__sidebar__add">
+                            <img src="/img/icons/add.svg" alt="plus icon">
+                        </span>
+                    </div>
+                    <div class="profile__sidebar__content">
+                        <p class="profile__sidebar__text">Yoshim 21da. Full Stack dasturchiman. Bu sohada 2 yillik tajribam bor. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+</section>
+
+<%- include('components/footer') %>
+<%- include('parts/footer') %>
