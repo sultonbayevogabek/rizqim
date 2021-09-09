@@ -29,43 +29,84 @@
     </header>
     <main class="profile__main">
         <div class="container">
-            <aside class="profile__sidebar">
-                <div class="profile__sidebar__item">
-                    <div class="profile__sidebar__header">
-                        <h2 class="profile__sidebar__heading">Ism</h2>
-                        <span class="profile__sidebar__edit">
+            <section class="profile__section profile__section--basic">
+                <div>
+                    <header class="profile__section__header">
+                        <h2 class="profile__section__heading">Ism, familiya</h2>
+                        <div class="profile__section__edit" title="O'zgartirish">
                             <img src="/img/icons/edit.svg" alt="edit icon">
-                        </span>
-                    </div>
-                    <div class="profile__sidebar__content">
-                        <p class="profile__sidebar__text">Og'abek Sultonbayev</p>
-                    </div>
+                        </div>
+                    </header>
+                    <main class="profile__section__main">
+                        <p class="profile__section__text">Og'abek Sultonbayev</p>
+                    </main>
                 </div>
-                <div class="profile__sidebar__item">
-                    <div class="profile__sidebar__header">
-                        <h2 class="profile__sidebar__heading">O'zingiz haqingizda</h2>
-                        <span class="profile__sidebar__edit">
+                <div>
+                    <header class="profile__section__header">
+                        <h2 class="profile__section__heading">Telefon raqam</h2>
+                        <div class="profile__section__edit" title="O'zgartirish">
                             <img src="/img/icons/edit.svg" alt="edit icon">
-                        </span>
-                    </div>
-                    <div class="profile__sidebar__content">
-                        <p class="profile__sidebar__text">Yoshim 21da. Full Stack dasturchiman. Bu sohada 2 yillik tajribam bor. Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
-                    </div>
+                        </div>
+                    </header>
+                    <main class="profile__section__main">
+                        <p class="profile__section__text">+99 899 963 97 73</p>
+                    </main>
                 </div>
-                <div class="profile__sidebar__item">
-                    <div class="profile__sidebar__header">
-                        <h2 class="profile__sidebar__heading">Portfolio</h2>
-                        <span class="profile__sidebar__add">
-                            <img src="/img/icons/add.svg" alt="plus icon">
-                        </span>
-                    </div>
-                    <div class="profile__sidebar__content">
-                        <p class="profile__sidebar__text">Yoshim 21da. Full Stack dasturchiman. Bu sohada 2 yillik tajribam bor. Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
-                    </div>
+                <div>
+                    <header class="profile__section__header">
+                        <h2 class="profile__section__heading">Elektron pochta</h2>
+                        <div class="profile__section__edit" title="O'zgartirish">
+                            <img src="/img/icons/edit.svg" alt="edit icon">
+                        </div>
+                    </header>
+                    <main class="profile__section__main">
+                        <p class="profile__section__text">sultonbayevogabek@gmail.com</p>
+                    </main>
                 </div>
-            </aside>
+            </section>
+            <section class="profile__section">
+                <header class="profile__section__header">
+                    <h2 class="profile__section__heading">O'zingiz haqingizda ma'lumot</h2>
+                    <div class="profile__section__edit" title="O'zgartirish">
+                        <img src="/img/icons/edit.svg" alt="edit icon">
+                    </div>
+                </header>
+                <main class="profile__section__main">
+                    <p class="profile__section__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                        ex ea commodo consequat.</p>
+                </main>
+            </section>
+            <section class="profile__section">
+                <header class="profile__section__header">
+                    <h2 class="profile__section__heading">Portfolio</h2>
+                    <div class="profile__section__add" title="Qo'shish">
+                        <img src="/img/icons/add.svg" alt="edit icon">
+                    </div>
+                </header>
+                <main class="profile__section__main profile__section__main--grid">
+                    <% for (let i = 0; i < 5; i++) { %>
+                        <%- include('components/card', {
+                            postTitle: 'Kun.uz Web Sayti',
+                            viewsCount: null,
+                            workersCount: null,
+                            postType: 'frontend',
+                            postLink: 'https://kun.uz'
+                        }) %>
+                    <% } %>
+                </main>
+            </section>
+            <section class="profile__section">
+                <header class="profile__section__header">
+                    <h2 class="profile__section__heading">Ishlagan joylaringiz</h2>
+                    <div class="profile__section__add" title="Qo'shish">
+                        <img src="/img/icons/add.svg" alt="edit icon">
+                    </div>
+                </header>
+                <main class="profile__section__main">
+
+                </main>
+            </section>
         </div>
     </main>
 </section>

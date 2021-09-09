@@ -89,49 +89,44 @@
 }
 
 .profile__main {
-   .container {
-      display: grid;
-      grid-template-columns: 306px 854px;
-      grid-column-gap: 40px;
-      padding-top: 60px;
+   padding-top: 60px;
+}
+
+.profile__section {
+   padding-bottom: 40px;
+   border-bottom: 1px solid $SECONDARY_TEXT_COLOR;
+
+   &:not(:first-child) {
+      padding-top: 20px;
    }
 }
 
-.profile__sidebar {
-   padding: 26px 24px 6px;
-   background-color: $WHITE_COLOR;
-   box-shadow: 0 6px 24px rgba(32, 68, 160, 0.18);
+.profile__section--basic {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-column-gap: 24px;
 }
 
-.profile__sidebar__item {
-   margin-bottom: 20px;
-   padding-bottom: 20px;
-   border-bottom: 1px solid $SIDEBAR_BORDER_COLOR;
-}
-
-.profile__sidebar__header {
+.profile__section__header {
    display: flex;
    align-items: center;
-   justify-content: space-between;
-   margin-bottom: 15px;
+   margin-bottom: 10px;
 }
 
-.profile__sidebar__heading {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+.profile__section__heading {
+   margin-right: 20px;
    font-weight: 600;
-   font-size: 20px;
-   line-height: 24px;
+   font-size: 24px;
+   line-height: 29px;
    color: $SELECT_TEXT_COLOR;
 }
 
-.profile__sidebar__edit {
+.profile__section__edit {
    display: flex;
    align-items: center;
    justify-content: center;
-   width: 16px;
-   height: 16px;
+   width: 18px;
+   height: 18px;
    cursor: pointer;
 
    img {
@@ -139,12 +134,12 @@
    }
 }
 
-.profile__sidebar__add {
+.profile__section__add {
    display: flex;
    align-items: center;
    justify-content: center;
-   width: 20px;
-   height: 20px;
+   width: 22px;
+   height: 22px;
    cursor: pointer;
 
    img {
@@ -152,9 +147,16 @@
    }
 }
 
-.profile__sidebar__text {
-   font-weight: 300;
+.profile__section__text {
+   font-weight: 400;
    font-size: 16px;
    line-height: 19px;
-   color: $SECONDARY_TEXT_COLOR;
+   color: $LABEL_TEXT_COLOR;
+}
+
+.profile__section__main--grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-gap: 24px;
+   padding-top: 10px;
 }

@@ -17,10 +17,12 @@ const trimText = text => {
     <div class="card__body">
         <h3 class="card__heading"><%= trimText(postTitle)%></h3>
         <div class="card__statistic">
-            <div class="card__views">
-                <span><%= viewsCount %></span>
-                <img src="/img/icons/views.svg" alt="">
-            </div>
+            <% if (viewsCount) { %>
+                <div class="card__views">
+                    <span><%= viewsCount %></span>
+                    <img src="/img/icons/views.svg" alt="">
+                </div>
+            <% } %>
             <% if (workersCount) { %>
                 <div class="card__workers">
                     <span><%= workersCount %></span>
