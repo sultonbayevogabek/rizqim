@@ -49,7 +49,7 @@
                         </div>
                     </header>
                     <main class="profile__section__main">
-                        <p class="profile__section__text">+99 899 963 97 73</p>
+                        <a class="profile__section__text" href="tel: +998999639773" target="_blank">+99 899 963 97 73</a>
                     </main>
                 </div>
                 <div>
@@ -60,7 +60,18 @@
                         </div>
                     </header>
                     <main class="profile__section__main">
-                        <p class="profile__section__text">sultonbayevogabek@gmail.com</p>
+                        <a class="profile__section__text" href="mailto: sultonbayevogabek@gmail.com" target="_blank">sultonbayevogabek@gmail.com</a>
+                    </main>
+                </div>
+                <div>
+                    <header class="profile__section__header">
+                        <h2 class="profile__section__heading">Telegram username</h2>
+                        <div class="profile__section__edit" title="O'zgartirish">
+                            <img src="/img/icons/edit.svg" alt="edit icon">
+                        </div>
+                    </header>
+                    <main class="profile__section__main">
+                        <a class="profile__section__text" href="https://t.me/Ogabek19991031" target="_blank">@Ogabek19991031</a>
                     </main>
                 </div>
             </section>
@@ -85,7 +96,7 @@
                     </div>
                 </header>
                 <main class="profile__section__main profile__section__main--grid">
-                    <% for (let i = 0; i < 5; i++) { %>
+                    <% for (let i = 0; i < 4; i++) { %>
                         <%- include('components/card', {
                             postTitle: 'Kun.uz Web Sayti',
                             viewsCount: null,
@@ -104,7 +115,29 @@
                     </div>
                 </header>
                 <main class="profile__section__main">
-
+                    <ul class="profile__experience__list">
+                        <li class="profile__experience__item">
+                            <h3 class="profile__experience__heading">
+                                <span>Front End Dasturchi. 2019, noyabr - 2020, dekabr</span>
+                                <img class="profile__experience__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
+                            </h3>
+                            <p class="profile__section__text">ECMA Group dasturlash firmasida Front End dasturchi bo'lib ishlaganman. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, nostrum.</p>
+                        </li>
+                        <li class="profile__experience__item">
+                            <h3 class="profile__experience__heading">
+                                <span>Front End Mentor. 2019, noyabr - 2020, dekabr</span>
+                                <img class="profile__experience__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
+                            </h3>
+                            <p class="profile__section__text">PDP IT akademiyasida Front End mentor bo'lib ishladim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam magnam maxime neque obcaecati repellat tempore.</p>
+                        </li>
+                        <li class="profile__experience__item">
+                            <h3 class="profile__experience__heading">
+                                <span>Front End Dasturchi. 2020, noyabr - 2021, dekabr</span>
+                                <img class="profile__experience__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
+                            </h3>
+                            <p class="profile__section__text">Pixer IT firmasida front end dasturchi bo'lib ishladim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequatur corporis eligendi, enim ex expedita id illo illum itaque minus mollitia necessitatibus odit perferendis perspiciatis quia ullam voluptates? Impedit, rerum?</p>
+                        </li>
+                    </ul>
                 </main>
             </section>
         </div>
