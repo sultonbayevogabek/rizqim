@@ -98,11 +98,11 @@
                 <main class="profile__section__main profile__section__main--grid">
                     <% for (let i = 0; i < 4; i++) { %>
                         <%- include('components/card', {
-                            postTitle: 'Kun.uz Web Sayti',
+                            cardTitle: 'Kun.uz Web Sayti',
                             viewsCount: null,
                             workersCount: null,
-                            postType: 'frontend',
-                            postLink: 'https://kun.uz'
+                            cardType: 'frontend',
+                            cardLink: 'https://kun.uz'
                         }) %>
                     <% } %>
                 </main>
@@ -136,6 +136,197 @@
                                 <img class="profile__experience__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
                             </h3>
                             <p class="profile__section__text">Pixer IT firmasida front end dasturchi bo'lib ishladim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequatur corporis eligendi, enim ex expedita id illo illum itaque minus mollitia necessitatibus odit perferendis perspiciatis quia ullam voluptates? Impedit, rerum?</p>
+                        </li>
+                    </ul>
+                </main>
+            </section>
+            <section class="profile__section">
+                <header class="profile__section__header">
+                    <h2 class="profile__section__heading">O'qigan joylaringiz</h2>
+                    <div class="profile__section__add" title="Qo'shish">
+                        <img src="/img/icons/add.svg" alt="edit icon">
+                    </div>
+                </header>
+                <main class="profile__section__main">
+                    <ul class="profile__education__list">
+                        <li class="profile__education__item">
+                            <h3 class="profile__education__heading">
+                                <span>PDP akademiyasi. 2019, noyabr - 2020, dekabr</span>
+                                <img class="profile__education__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
+                            </h3>
+                            <p class="profile__section__text">ECMA Group dasturlash firmasida Front End dasturchi bo'lib ishlaganman. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, nostrum.</p>
+                        </li>
+                        <li class="profile__education__item">
+                            <h3 class="profile__education__heading">
+                                <span>Najot Ta'lim o'quv markazi. 2019, noyabr - 2020, dekabr</span>
+                                <img class="profile__education__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
+                            </h3>
+                            <p class="profile__section__text">PDP IT akademiyasida Front End mentor bo'lib ishladim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam magnam maxime neque obcaecati repellat tempore.</p>
+                        </li>
+                    </ul>
+                </main>
+            </section>
+            <section class="profile__section">
+                <header class="profile__section__header">
+                    <h2 class="profile__section__heading">Biladigan tillaringiz</h2>
+                    <div class="profile__section__add" title="Qo'shish">
+                        <img src="/img/icons/add.svg" alt="edit icon">
+                    </div>
+                </header>
+                <main class="profile__section__main">
+                    <ul class="profile__language__list">
+                        <li class="profile__language__item">
+                            <h3 class="profile__language__heading">
+                                <span>O'zbek tili</span>
+                                <img class="profile__language__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
+                            </h3>
+                            <p class="profile__section__text">Erkin darajada</p>
+                        </li>
+                        <li class="profile__language__item">
+                            <h3 class="profile__language__heading">
+                                <span>Ingliz tili</span>
+                                <img class="profile__language__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
+                            </h3>
+                            <p class="profile__section__text">O'rta darajada</p>
+                        </li>
+                        <li class="profile__language__item">
+                            <h3 class="profile__language__heading">
+                                <span>Rus tili</span>
+                                <img class="profile__language__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
+                            </h3>
+                            <p class="profile__section__text">Erkin darajada</p>
+                        </li>
+                        <li class="profile__language__item">
+                            <h3 class="profile__language__heading">
+                                <span>Yapon tili</span>
+                                <img class="profile__language__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
+                            </h3>
+                            <p class="profile__section__text">O'rta darajada</p>
+                        </li>
+                    </ul>
+                </main>
+            </section>
+            <section class="profile__section">
+                <header class="profile__section__header">
+                    <h2 class="profile__section__heading">Ko'nikmalaringiz</h2>
+                    <div class="profile__section__add" title="Qo'shish">
+                        <img src="/img/icons/add.svg" alt="add icon">
+                    </div>
+                </header>
+                <main class="profile__section__main">
+                    <ul class="profile__skills__list">
+                        <li class="profile__skills__item">
+                            <span class="profile__skills__name">HTML</span>
+                            <span class="profile__skills__remove" title="Olib tashlash">
+                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                            </span>
+                        </li>
+                        <li class="profile__skills__item">
+                            <span class="profile__skills__name">CSS</span>
+                            <span class="profile__skills__remove" title="Olib tashlash">
+                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                            </span>
+                        </li>
+                        <li class="profile__skills__item">
+                            <span class="profile__skills__name">JavaScript</span>
+                            <span class="profile__skills__remove" title="Olib tashlash">
+                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                            </span>
+                        </li>
+                        <li class="profile__skills__item">
+                            <span class="profile__skills__name">Sass</span>
+                            <span class="profile__skills__remove" title="Olib tashlash">
+                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                            </span>
+                        </li>
+                        <li class="profile__skills__item">
+                            <span class="profile__skills__name">Bootstrap</span>
+                            <span class="profile__skills__remove" title="Olib tashlash">
+                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                            </span>
+                        </li>
+                        <li class="profile__skills__item">
+                            <span class="profile__skills__name">Webpack</span>
+                            <span class="profile__skills__remove" title="Olib tashlash">
+                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                            </span>
+                        </li>
+                        <li class="profile__skills__item">
+                            <span class="profile__skills__name">Webpack</span>
+                            <span class="profile__skills__remove" title="Olib tashlash">
+                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                            </span>
+                        </li>
+                        <li class="profile__skills__item">
+                            <span class="profile__skills__name">Babel</span>
+                            <span class="profile__skills__remove" title="Olib tashlash">
+                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                            </span>
+                        </li>
+                        <li class="profile__skills__item">
+                            <span class="profile__skills__name">Git</span>
+                            <span class="profile__skills__remove" title="Olib tashlash">
+                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                            </span>
+                        </li>
+                        <li class="profile__skills__item">
+                            <span class="profile__skills__name">Vue</span>
+                            <span class="profile__skills__remove" title="Olib tashlash">
+                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                            </span>
+                        </li>
+                        <li class="profile__skills__item">
+                            <span class="profile__skills__name">NodeJS</span>
+                            <span class="profile__skills__remove" title="Olib tashlash">
+                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                            </span>
+                        </li>
+                        <li class="profile__skills__item">
+                            <span class="profile__skills__name">ExpressJS</span>
+                            <span class="profile__skills__remove" title="Olib tashlash">
+                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                            </span>
+                        </li>
+                        <li class="profile__skills__item">
+                            <span class="profile__skills__name">Postgres</span>
+                            <span class="profile__skills__remove" title="Olib tashlash">
+                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                            </span>
+                        </li>
+                        <li class="profile__skills__item">
+                            <span class="profile__skills__name">Mongo</span>
+                            <span class="profile__skills__remove" title="Olib tashlash">
+                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                            </span>
+                        </li>
+                    </ul>
+                </main>
+            </section>
+            <section class="profile__section">
+                <header class="profile__section__header">
+                    <h2 class="profile__section__heading">Ijtimoiy tarmoqdagi sahifalaringiz</h2>
+                    <div class="profile__section__add" title="Qo'shish">
+                        <img src="/img/icons/add.svg" alt="add icon">
+                    </div>
+                </header>
+                <main class="profile__section__main">
+                    <ul class="profile__links__list">
+                        <li class="profile__links__item">
+                            <a class="profile__links__link" href="#" target="_blank">
+                                <img src="/img/icons/network.svg" alt="network icon">
+                                <span>Web sayt</span>
+                                <img class="profile__link__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
+                            </a>
+                            <a class="profile__links__link" href="#" target="_blank">
+                                <img src="/img/icons/youtube.svg" alt="youtube icon">
+                                <span>YouTube</span>
+                                <img class="profile__link__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
+                            </a>
+                            <a class="profile__links__link" href="#" target="_blank">
+                                <img src="/img/icons/git.svg" alt="git icon">
+                                <span>Github</span>
+                                <img class="profile__link__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
+                            </a>
                         </li>
                     </ul>
                 </main>
