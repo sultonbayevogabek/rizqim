@@ -82,3 +82,23 @@
    left: 0;
    font-size: 0;
 }
+
+.card__edit {
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   z-index: 3;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 35px;
+   height: 35px;
+   padding: 7px;
+   border: 3px solid $WHITE_COLOR;
+   border-radius: 50%;
+   cursor: pointer;
+
+   svg {
+      width: 100%;
+   }
+}

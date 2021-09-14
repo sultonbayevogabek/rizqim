@@ -45,6 +45,13 @@ export default () => {
                         makeValid(label)
                     }
                 }
+                if (target.hasAttribute('data-input-project-name')) {
+                    if (!/^[a-z'`]+$/i.test(value) || value.length < 3 || value.length > 25) {
+                        makeInvalid(label, `Proyekt nomi 3 tadan kam bo'lmagan va 25 tadan ko'p bo'lmagan, lotin harflaridan iborat bo'lishi kerak`)
+                    } else {
+                        makeValid(label)
+                    }
+                }
                 if (target.hasAttribute('data-input-lname')) {
                     if (!/^[a-z'`]+$/i.test(value) || value.length < 5 || value.length > 30) {
                         makeInvalid(label, `Familiya 5 tadan kam bo'lmagan va 30 tadan ko'p bo'lmagan lotin harflaridan iborat bo'lishi kerak`)
@@ -88,6 +95,13 @@ export default () => {
                         makeValid(label)
                     } else {
                         makeInvalid(label, `Portfoliongiz manzilini kiritishingiz kerak. Misol uchun: https://sultonbayev.uz`)
+                    }
+                }
+                if (target.hasAttribute('data-input-project-link')) {
+                    if (value.trim().startsWith('https://') && value.length > 12) {
+                        makeValid(label)
+                    } else {
+                        makeInvalid(label, `Proyekt uchun havolani kiritishingiz kerak. Misol uchun: https://abm.uz`)
                     }
                 }
                 if (target.hasAttribute('data-input-role')) {

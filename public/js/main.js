@@ -4,6 +4,7 @@ import validateForm from './_validate-form'
 import devTool from './_dev-tools'
 import customSelect from './_custom-select'
 import maskPhone from './_mask-phone'
+import previewImg from './_preview-img'
 
 document.addEventListener('DOMContentLoaded', () => {
     clickEffect()
@@ -11,4 +12,5 @@ document.addEventListener('DOMContentLoaded', () => {
     validateForm()
     customSelect()
     maskPhone()
+    previewImg('#modal', '.modal__preview')
 })

@@ -1,0 +1,207 @@
+@import "variables";
+
+.modal {
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 4;
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   padding: 174px 10px 174px;
+   background-color: rgba($SELECT_TEXT_COLOR, 0.45);
+   overflow: auto;
+}
+
+.modal__content {
+   position: relative;
+   width: 732px;
+   padding: 26px 24px 24px;
+   background-color: $WHITE_COLOR;
+   box-shadow: 0 6px 18px rgba(32, 68, 160, 0.18);
+   transition: 0.2s all linear;
+   transform-origin: center center;
+   opacity: 1;
+   transform: scale(1);
+}
+
+.modal__close {
+   position: absolute;
+   top: 30px;
+   right: 30px;
+   padding: 0;
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+}
+
+.modal__heading {
+   margin-bottom: 40px;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 24px;
+   color: $SELECT_TEXT_COLOR;
+}
+
+.modal__field {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-column-gap: 24px;
+
+   &__4 {
+      grid-template-columns: repeat(4, 1fr);
+   }
+}
+
+.modal__label::after {
+   top: 1px;
+}
+
+.modal__input, .modal__textarea {
+   font-weight: 300;
+   font-size: 16px;
+   line-height: 19px;
+   background-color: $MAIN_BG_COLOR;
+   color: $DARK_GREY_COLOR;
+
+   &::placeholder {
+      color: $SECONDARY_TEXT_COLOR;
+   }
+}
+
+.modal__textarea {
+   height: 209px;
+}
+
+.modal__submit {
+   display: flex;
+   justify-content: flex-end;
+   padding-top: 20px;
+
+   .button {
+      padding: 0 16px;
+   }
+}
+
+.modal__submit .button-outline {
+   margin-right: 24px;
+   border-color: $SECONDARY_TEXT_COLOR;
+   color: $SECONDARY_TEXT_COLOR;
+
+   &:hover {
+      background-color: $SECONDARY_TEXT_COLOR;
+      color: $WHITE_COLOR;
+   }
+}
+
+.modal__preview {
+   width: 100%;
+   padding-bottom: 20px;
+
+   img {
+      width: 100%;
+   }
+}
+
+.modal__select {
+   width: 100%;
+
+   .select__selected {
+      width: 100%;
+      background-color: $MAIN_BG_COLOR;
+      color: $DARK_GREY_COLOR;
+   }
+
+   .select__list {
+      background-color: $MAIN_BG_COLOR;
+      box-shadow: 0 3px 6px 0 rgba($SECONDARY_TEXT_COLOR, 0.3);
+   }
+}
+
+.add-language {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 330px;
+   height: 46px;
+   margin-left: auto;
+   border: 2px solid $INPUT_BORDER_COLOR;
+   background-color: transparent;
+   cursor: pointer;
+   transition: 0.3s;
+
+   &:hover {
+      background-color: $INPUT_BORDER_COLOR;
+
+      svg path {
+         fill: $WHITE_COLOR;
+      }
+   }
+}
+
+.skills__add {
+   position: relative;
+}
+
+.skills__hints {
+   position: absolute;
+   top: 51px;
+   left: 0;
+   width: 100%;
+   background-color: $MAIN_BG_COLOR;
+   box-shadow: 0 4px 22px rgba(32, 68, 160, 0.18);
+}
+
+.skills__hints__item {
+   display: flex;
+   align-items: center;
+   padding: 14px;
+   font-weight: 300;
+   font-size: 16px;
+   line-height: 19px;
+   color: $SECONDARY_TEXT_COLOR;
+   cursor: pointer;
+
+   &:hover {
+      background-color: $INPUT_BORDER_COLOR;
+      color: $SELECT_TEXT_COLOR;
+   }
+}
+
+.skills__list {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.skills__item {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 34px;
+   margin-right: 8px;
+   margin-bottom: 10px;
+   padding-left: 7px;
+   padding-right: 7px;
+   background-color: $MAIN_BLUE_COLOR;
+   font-weight: 300;
+   font-size: 14px;
+   line-height: 17px;
+   color: $WHITE_COLOR;
+}
+
+.skills__remove {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 20px;
+   height: 20px;
+   margin-left: 10px;
+   padding: 5px;
+   cursor: pointer;
+
+   img {
+      width: 100%;
+   }
+}

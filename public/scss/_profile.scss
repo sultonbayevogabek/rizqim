@@ -266,6 +266,10 @@
    }
 }
 
+.profile__links__list {
+   padding-top: 10px;
+}
+
 .profile__links__link {
    display: inline-flex;
    align-items: center;
@@ -278,5 +282,26 @@
    img {
       height: 18px;
       margin-right: 5px;
+   }
+}
+
+.profile__section__empty {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding-top: 17px;
+   padding-bottom: 20px;
+
+   img {
+      width: 100px;
+      margin-bottom: 17px;
+   }
+
+   p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: $LABEL_TEXT_COLOR;
    }
 }

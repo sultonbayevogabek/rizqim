@@ -1,0 +1,378 @@
+<!--ism, familiya-->
+<div class="modal d-none">
+    <div class="modal__content">
+        <div class="modal__inner">
+            <h2 class="modal__heading">Ism, familiya</h2>
+            <form class="modal__form form">
+                <div class="modal__field">
+                    <label class="modal__label label">
+                        <span class="d-none">Ism</span>
+                        <input class="modal__input input" type="text" placeholder="Ism" data-input-fname>
+                    </label>
+                    <label class="modal__label label">
+                        <span class="d-none">Familiya</span>
+                        <input class="modal__input input" type="text" placeholder="Familiya" data-input-lname>
+                    </label>
+                </div>
+                <div class="modal__submit">
+                    <button class="button button-outline" type="button" data-modal-close>Bekor qilish</button>
+                    <button class="button button-blue" type="submit">Yangilash</button>
+                </div>
+            </form>
+        </div>
+        <button class="modal__close" data-modal-close>
+            <img src="/img/icons/close-modal.svg" alt="close modal icon">
+        </button>
+    </div>
+</div>
+
+<!--o'zingiz haqida ma'lumot modali-->
+<div class="modal d-none">
+    <div class="modal__content">
+        <h2 class="modal__heading">O'zingiz haqingizda</h2>
+        <form class="modal__form form">
+            <textarea class="textarea modal__textarea" id="textarea" placeholder="O'zingiz haqingizda ma'lumot kiriting"></textarea>
+            <div class="modal__submit">
+                <button class="button button-outline" type="button" data-modal-close>Bekor qilish</button>
+                <button class="button button-blue" type="submit">Yangilash</button>
+            </div>
+        </form>
+        <button class="modal__close" data-modal-close>
+            <img src="/img/icons/close-modal.svg" alt="close modal icon">
+        </button>
+    </div>
+</div>
+
+<!--portfolio qo'shish modali-->
+<div class="modal d-none">
+    <div class="modal__content">
+        <h2 class="modal__heading">Portfolio</h2>
+        <form class="modal__form form">
+            <label class="label valid after-none">
+                <span class="text">Loyihani tasvirlovchi rasm(.png yoki .jpg formatda, hajmi 1Mb gacha bo'lgan bitta rasm)</span>
+                <span class="button button-outline" type="button">Rasm qo'shish</span>
+                <input class="d-none" type="file" id="modal" accept=".png, .jpg">
+            </label>
+            <div class="modal__preview"></div>
+            <div class="modal__field">
+                <label class="label">
+                    <span class="text">Loyiha nomi</span>
+                    <input class="input modal__input" type="text" placeholder="Loyiha nomi" data-input-project-name>
+                </label>
+                <label class="label">
+                    <span class="text">Loyiha uchun havola</span>
+                    <input class="input modal__input" type="url" placeholder="Loyiha nomi" data-input-project-link>
+                </label>
+            </div>
+            <div class="modal__submit">
+                <button class="button button-outline" type="button" data-modal-close>Bekor qilish</button>
+                <button class="button button-blue" type="submit" disabled>Yangilash</button>
+            </div>
+        </form>
+        <button class="modal__close" data-modal-close>
+            <img src="/img/icons/close-modal.svg" alt="close modal icon">
+        </button>
+    </div>
+</div>
+
+<!--o'qish joyi modali-->
+<div class="modal d-none">
+    <div class="modal__content">
+        <h2 class="modal__heading">Ta'lim</h2>
+        <form class="modal__form form">
+            <div class="modal__field">
+                <label class="label">
+                    <span class="text">O'qigan joyingiz nomi</span>
+                    <input class="input modal__input" type="text" placeholder="O'qigan joyingiz nomi" data-input-project-name>
+                </label>
+                <label class="label">
+                    <span class="text">Qaysi yo'nalish bo'yicha o'qigansiz?</span>
+                    <input class="input modal__input" type="url" placeholder="Loyiha nomi" data-input-project-link>
+                </label>
+            </div>
+            <div class="modal__field modal__field__4">
+                <label class="label after-none">
+                    <span class="text">O'qish boshlangan yil</span>
+                    <div class="select modal__select">
+                        <div class="select__selected"></div>
+                        <ul class="select__list d-none">
+                            <% for (let i = 1990; i <= new Date().getFullYear(); i ++) { %>
+                                <li class="select__item"><%= i %></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </label>
+                <label class="label after-none">
+                    <span class="text">Oy</span>
+                    <div class="select modal__select">
+                        <div class="select__selected"></div>
+                        <ul class="select__list d-none">
+                            <li class="select__item">yanvar</li>
+                            <li class="select__item">fevral</li>
+                            <li class="select__item">mart</li>
+                            <li class="select__item">aprel</li>
+                            <li class="select__item">may</li>
+                            <li class="select__item">iyun</li>
+                            <li class="select__item">iyul</li>
+                            <li class="select__item">avgust</li>
+                            <li class="select__item">sentabr</li>
+                            <li class="select__item">oktabr</li>
+                            <li class="select__item">noyabr</li>
+                            <li class="select__item">dekabr</li>
+                        </ul>
+                    </div>
+                </label>
+                <label class="label after-none">
+                    <span class="text">O'qish tugagan yil</span>
+                    <div class="select modal__select">
+                        <div class="select__selected"></div>
+                        <ul class="select__list d-none">
+                            <% for (let i = 1990; i < new Date().getFullYear(); i ++) { %>
+                                <li class="select__item"><%= i %></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </label>
+                <label class="label after-none">
+                    <span class="text">Oy</span>
+                    <div class="select modal__select">
+                        <div class="select__selected"></div>
+                        <ul class="select__list d-none">
+                            <li class="select__item">yanvar</li>
+                            <li class="select__item">fevral</li>
+                            <li class="select__item">mart</li>
+                            <li class="select__item">aprel</li>
+                            <li class="select__item">may</li>
+                            <li class="select__item">iyun</li>
+                            <li class="select__item">iyul</li>
+                            <li class="select__item">avgust</li>
+                            <li class="select__item">sentabr</li>
+                            <li class="select__item">oktabr</li>
+                            <li class="select__item">noyabr</li>
+                            <li class="select__item">dekabr</li>
+                        </ul>
+                    </div>
+                </label>
+            </div>
+            <textarea class="textarea modal__textarea" id="textarea" placeholder="O'qigan joyingiz haqida yozing"></textarea>
+            <div class="modal__submit">
+                <button class="button button-outline" type="button" data-modal-close>Bekor qilish</button>
+                <button class="button button-blue" type="submit" disabled>Yangilash</button>
+            </div>
+        </form>
+        <button class="modal__close" data-modal-close>
+            <img src="/img/icons/close-modal.svg" alt="close modal icon">
+        </button>
+    </div>
+</div>
+
+<!--til qo'shish modali-->
+<div class="modal d-none">
+    <div class="modal__content">
+        <h2 class="modal__heading">Biladigan tillaringiz</h2>
+        <form class="modal__form form">
+            <div class="modal__field">
+                <label class="label after-none">
+                    <span class="text">Tilni tanlang</span>
+                    <div class="select modal__select">
+                        <div class="select__selected"></div>
+                        <ul class="select__list d-none">
+                            <li class="select__item">Ingliz tili</li>
+                            <li class="select__item">Rus tili</li>
+                            <li class="select__item">Koreys tili</li>
+                            <li class="select__item">Xitoy tili</li>
+                            <li class="select__item">Arab tili</li>
+                            <li class="select__item">Yapon tili</li>
+                        </ul>
+                    </div>
+                </label>
+                <label class="label after-none">
+                    <span class="text">Shu tilni bilish darajangiz</span>
+                    <div class="select modal__select">
+                        <div class="select__selected"></div>
+                        <ul class="select__list d-none">
+                            <li class="select__item">Tushunaman</li>
+                            <li class="select__item">Hujjatlarni o'qib tushunaman</li>
+                            <li class="select__item">Gaplasha olaman</li>
+                        </ul>
+                    </div>
+                </label>
+            </div>
+            <div>
+                <button class="add-language" type="button" title="Til qo'shish">
+                    <svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 6V0h2v6h6v2H8v6H6V8H0V6h6Z" fill="#C6D4FF"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__submit">
+                <button class="button button-outline" type="button" data-modal-close>Bekor qilish</button>
+                <button class="button button-blue" type="submit" disabled>Yangilash</button>
+            </div>
+        </form>
+        <button class="modal__close" data-modal-close>
+            <img src="/img/icons/close-modal.svg" alt="close modal icon">
+        </button>
+    </div>
+</div>
+
+<!--o'qish joyi modali-->
+<div class="modal d-none">
+    <div class="modal__content">
+        <h2 class="modal__heading">Ishlagan joylaringiz</h2>
+        <form class="modal__form form">
+            <div class="modal__field">
+                <label class="label">
+                    <span class="text">Ishlagan joyingiz nomi</span>
+                    <input class="input modal__input" type="text" placeholder="Ishlagan joyingiz nomi" data-input-project-name>
+                </label>
+                <label class="label">
+                    <span class="text">Kim bo'lib ishlagansiz?</span>
+                    <input class="input modal__input" type="url" placeholder="Kim bo'lib ishlagansiz?" data-input-project-link>
+                </label>
+            </div>
+            <div class="modal__field modal__field__4">
+                <label class="label after-none">
+                    <span class="text">Ish boshlangan yil</span>
+                    <div class="select modal__select">
+                        <div class="select__selected"></div>
+                        <ul class="select__list d-none">
+                            <% for (let i = 1990; i <= new Date().getFullYear(); i ++) { %>
+                                <li class="select__item"><%= i %></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </label>
+                <label class="label after-none">
+                    <span class="text">Oy</span>
+                    <div class="select modal__select">
+                        <div class="select__selected"></div>
+                        <ul class="select__list d-none">
+                            <li class="select__item">yanvar</li>
+                            <li class="select__item">fevral</li>
+                            <li class="select__item">mart</li>
+                            <li class="select__item">aprel</li>
+                            <li class="select__item">may</li>
+                            <li class="select__item">iyun</li>
+                            <li class="select__item">iyul</li>
+                            <li class="select__item">avgust</li>
+                            <li class="select__item">sentabr</li>
+                            <li class="select__item">oktabr</li>
+                            <li class="select__item">noyabr</li>
+                            <li class="select__item">dekabr</li>
+                        </ul>
+                    </div>
+                </label>
+                <label class="label after-none">
+                    <span class="text">Ish tugagan yil</span>
+                    <div class="select modal__select">
+                        <div class="select__selected"></div>
+                        <ul class="select__list d-none">
+                            <% for (let i = 1990; i <= new Date().getFullYear(); i ++) { %>
+                                <li class="select__item"><%= i %></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </label>
+                <label class="label after-none">
+                    <span class="text">Oy</span>
+                    <div class="select modal__select">
+                        <div class="select__selected"></div>
+                        <ul class="select__list d-none">
+                            <li class="select__item">yanvar</li>
+                            <li class="select__item">fevral</li>
+                            <li class="select__item">mart</li>
+                            <li class="select__item">aprel</li>
+                            <li class="select__item">may</li>
+                            <li class="select__item">iyun</li>
+                            <li class="select__item">iyul</li>
+                            <li class="select__item">avgust</li>
+                            <li class="select__item">sentabr</li>
+                            <li class="select__item">oktabr</li>
+                            <li class="select__item">noyabr</li>
+                            <li class="select__item">dekabr</li>
+                        </ul>
+                    </div>
+                </label>
+            </div>
+            <textarea class="textarea modal__textarea" id="textarea" placeholder="Ishlagan joyingiz haqida yozing"></textarea>
+            <div class="modal__submit">
+                <button class="button button-outline" type="button" data-modal-close>Bekor qilish</button>
+                <button class="button button-blue" type="submit" disabled>Yangilash</button>
+            </div>
+        </form>
+        <button class="modal__close" data-modal-close>
+            <img src="/img/icons/close-modal.svg" alt="close modal icon">
+        </button>
+    </div>
+</div>
+
+<!--o'qish joyi modali-->
+<div class="modal">
+    <div class="modal__content">
+        <h2 class="modal__heading">Ko'nikmalaringiz</h2>
+        <form class="modal__form">
+            <div class="modal__field">
+                <div class="skills__add">
+                    <input class="input modal__input" type="text" placeholder="Ko'nikma nomini kiriting">
+                    <ul class="skills__hints">
+                        <li class="skills__hints__item">
+                            JavaScript
+                        </li>
+                        <li class="skills__hints__item">
+                            Java
+                        </li>
+                        <li class="skills__hints__item">
+                            Joomla
+                        </li>
+                    </ul>
+                </div>
+                <ul class="skills__list">
+                    <li class="skills__item">
+                        <span>HTML</span>
+                        <span class="skills__remove">
+                            <img src="/img/icons/times.svg" alt="remove icon">
+                        </span>
+                    </li>
+                    <li class="skills__item">
+                        <span>CSS</span>
+                        <span class="skills__remove">
+                            <img src="/img/icons/times.svg" alt="remove icon">
+                        </span>
+                    </li>
+                    <li class="skills__item">
+                        <span>Sass</span>
+                        <span class="skills__remove">
+                            <img src="/img/icons/times.svg" alt="remove icon">
+                        </span>
+                    </li>
+                    <li class="skills__item">
+                        <span>Bootstrap</span>
+                        <span class="skills__remove">
+                            <img src="/img/icons/times.svg" alt="remove icon">
+                        </span>
+                    </li>
+                    <li class="skills__item">
+                        <span>Webpack</span>
+                        <span class="skills__remove">
+                            <img src="/img/icons/times.svg" alt="remove icon">
+                        </span>
+                    </li>
+                    <li class="skills__item">
+                        <span>Sequelize</span>
+                        <span class="skills__remove">
+                            <img src="/img/icons/times.svg" alt="remove icon">
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal__submit">
+                <button class="button button-outline" type="button" data-modal-close>Bekor qilish</button>
+                <button class="button button-blue" type="submit" disabled>Yangilash</button>
+            </div>
+        </form>
+        <button class="modal__close" data-modal-close>
+            <img src="/img/icons/close-modal.svg" alt="close modal icon">
+        </button>
+    </div>
+</div>
