@@ -5,6 +5,7 @@ import devTool from './_dev-tools'
 import customSelect from './_custom-select'
 import maskPhone from './_mask-phone'
 import previewImg from './_preview-img'
+import nav from './_nav'
 
 document.addEventListener('DOMContentLoaded', () => {
     clickEffect()
@@ -12,5 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     validateForm()
     customSelect()
     maskPhone()
+    nav()
     previewImg('#modal', '.modal__preview')
 })

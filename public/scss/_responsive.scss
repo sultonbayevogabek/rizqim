@@ -30,3 +30,97 @@
       }
    }
 }
+
+@include media-max(1130px) {
+   .intro {
+      height: auto;
+
+      .logo svg path {
+         fill: $WHITE_COLOR;
+      }
+   }
+
+   .intro__bg {
+      left: 0;
+      height: 166px;
+      background-image: url('/img/bg-images/bg-intro@mobile.jpg');
+      background-position: center;
+      background-size: cover;
+   }
+
+   .intro__inner {
+      width: 100%;
+      padding-top: 55px;
+   }
+
+   .intro__title {
+      font-size: 34px;
+      line-height: 50px;
+
+      span {
+         display: block;
+      }
+
+      span:first-child {
+         color: $WHITE_COLOR;
+      }
+   }
+
+   .intro__text {
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 17px;
+   }
+
+   .intro__links {
+      display: none;
+   }
+
+   .user, .signin {
+      display: none;
+   }
+
+   .nav {
+      padding-top: 24px;
+   }
+
+   .nav__ul {
+      position: fixed;
+      top: 0;
+      left: 1000%;
+      z-index: 5;
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      height: 100vh;
+      padding: 68px 20px 20px;
+      background-color: $MAIN_BG_COLOR;
+      overflow: auto;
+      transition: 0.5s all ease-out;
+   }
+
+   .nav__li {
+      margin-right: 0 !important;
+   }
+
+   .nav__li--mobile {
+      display: block;
+   }
+
+   .nav__link {
+      display: block;
+      padding: 32px 0;
+      border-bottom: 1px solid $INPUT_BORDER_COLOR;
+      font-size: 20px;
+      line-height: 24px;
+      color: $MAIN_BLUE_COLOR !important;
+
+      &::after {
+         display: none;
+      }
+   }
+
+   .nav__menu, .nav__close {
+      display: flex;
+   }
+}

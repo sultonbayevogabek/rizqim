@@ -5,7 +5,7 @@
 }
 
 @mixin media-max($max-width) {
-   @media only screen and (min-width: $max-width) {
+   @media only screen and (max-width: $max-width) {
       @content;
    }
 }

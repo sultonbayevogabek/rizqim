@@ -38,6 +38,18 @@
             <li class="nav__li">
                 <a class="nav__link <%= path === '/contact' ? 'active' : null %>" href="/contact">Aloqa</a>
             </li>
+            <% if (user) { %>
+                <li class="nav__li nav__li--mobile">
+                    <a class="nav__link" href="/<%= user.username %>"><%= user.firstName + ' ' + user.lastName %></a>
+                </li>
+            <% } else { %>
+                <li class="nav__li nav__li--mobile">
+                    <a class="nav__link" href="/signin">Tizimga kirish</a>
+                </li>
+            <% } %>
+            <button class="nav__close">
+                <img src="/img/icons/nav-close.svg" alt="nav close icon">
+            </button>
         </ul>
         <% if (user) { %>
             <a class="user" href="/<%= user.username %>" title="Shaxsiy profilga kirish">
@@ -55,5 +67,8 @@
                 <img src="/img/icons/signin.svg" alt="">
             </a>
         <% } %>
+        <button class="nav__menu">
+            <img src="/img/icons/menu.svg" alt="menu icon">
+        </button>
     </div>
 </nav>
