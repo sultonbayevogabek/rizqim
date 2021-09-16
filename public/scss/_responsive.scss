@@ -123,4 +123,81 @@
    .nav__menu, .nav__close {
       display: flex;
    }
+
+   .section {
+      padding-top: 40px;
+   }
+
+   .section__main {
+      padding-top: 30px;
+   }
+
+   .card {
+      height: 210px;
+   }
+
+   .card__heading {
+      font-size: 16px;
+      line-height: 19px;
+   }
+
+   .freelancer__info {
+      padding: 15px;
+   }
+
+   .freelancer__name {
+      font-size: 20px;
+      line-height: 24px;
+   }
+
+   .freelancer__level {
+      font-size: 12px;
+      line-height: 14px;
+   }
+
+   .sponsors__card {
+      height: 208px;
+
+      img {
+         width: 90px;
+      }
+   }
+
+   .statistics {
+      padding-bottom: 60px;
+   }
+
+   .statistics__value {
+      font-size: 28px;
+      line-height: 33px;
+   }
+
+   .statistics__title {
+      font-size: 20px;
+      line-height: 23px;
+   }
+
+   .footer__inner {
+      padding-top: 30px;
+      padding-bottom: 30px;
+   }
+}
+
+@include media-max(1000px) {
+   .statistics {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 24px;
+   }
+}
+
+@include media-max(850px) {
+   .statistics {
+      grid-gap: 10px;
+   }
+}
+
+@include media-max(850px) {
+   .statistics {
+      grid-template-columns: 1fr;
+   }
 }

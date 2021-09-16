@@ -16,20 +16,14 @@ export default () => {
                 gap: '24px',
                 pagination: false,
                 breakpoints: {
-                    '1300': {
-                        perPage: 4,
-                        width: '100%',
-                        gap: '20px',
-                    },
-                    '1060': {
+                    '850': {
                         perPage: 3,
-                        width: '100%',
-                        gap: '20px',
+                        gap: '10px'
                     },
-                    '800': {
+                    '620': {
                         perPage: 2,
-                        width: '100%',
-                        gap: '20px',
+                        gap: '10px',
+                        arrows: false
                     }
                 }
             }).mount()
@@ -50,20 +44,19 @@ export default () => {
             gap: '24px',
             pagination: false,
             breakpoints: {
-                '1300': {
-                    perPage: 4,
-                    width: '100%',
-                    gap: '20px',
+                '1200': {
+                    perPage: 2
                 },
-                '1060': {
-                    perPage: 3,
-                    width: '100%',
-                    gap: '20px',
-                },
-                '800': {
+                '850': {
                     perPage: 2,
-                    width: '100%',
-                    gap: '20px',
+                    gap: '10px'
+                },
+                '690': {
+                    perPage: 1
+                },
+                '620': {
+                    perPage: 1,
+                    arrows: false
                 }
             }
         }).mount()

@@ -7,13 +7,7 @@ const trimText = text => {
 }
 %>
 
-<div class="card" title="<%= cardTitle %>">
-    <div class="card__bg">
-        <picture>
-            <source srcset="/img/posting-images/<%= cardType %>1x-1.webp 1x, /img/posting-images/<%= cardType %>2x-1.webp 2x">
-            <img srcset="/img/posting-images/<%= cardType %>1x-1.jpg 1x, /img/posting-images/<%= cardType %>2x-1.jpg 2x" alt="posting type">
-        </picture>
-    </div>
+<div class="card" title="<%= cardTitle %>" style="background-image: url('/img/posting-images/<%= cardType %>-1.jpg')">
     <div class="card__body">
         <h3 class="card__heading"><%= trimText(cardTitle)%></h3>
         <div class="card__statistic">
