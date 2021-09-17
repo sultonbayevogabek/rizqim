@@ -58,7 +58,7 @@
    .intro__bg {
       left: 0;
       height: 166px;
-      background-image: url('/img/bg-images/bg-intro@mobile.jpg');
+      background-image: url('/img/bg-images/bg-about@laptop.jpg');
       background-position: center;
       background-size: cover;
    }
@@ -208,7 +208,7 @@
    }
 
    .main {
-      padding-top: 80px;
+      padding-top: 70px;
       padding-bottom: 60px;
    }
 
@@ -221,12 +221,68 @@
       font-size: 16px;
       line-height: 19px;
    }
+
+   .about-text {
+      font-size: 14px;
+      line-height: 16px;
+   }
+
+   .founders {
+      padding-top: 30px;
+   }
+
+   .founders__card {
+      height: 300px;
+   }
+
+   .founders__heading {
+      font-size: 20px;
+      line-height: 24px;
+   }
+
+   .founder__name {
+      padding: 20px;
+      font-size: 20px;
+      line-height: 24px;
+   }
+
+   .text {
+      margin-bottom: 7px;
+      font-size: 14px;
+      line-height: 16px;
+   }
+
+   .main--contact {
+      background-image: none;
+   }
+
+   .error {
+      margin-top: 5px;
+      font-size: 12px;
+      line-height: 14px;
+   }
+
+   .label::after {
+      top: 24px;
+   }
+
+   .auth__inner {
+      margin: 0 auto;
+   }
+
+   .auth-signin, .auth-signup {
+      padding-top: 145px;
+   }
 }
 
 @include media-max(1000px) {
    .statistics {
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 24px;
+   }
+
+   .founders__card {
+      height: 250px;
    }
 }
 
@@ -239,11 +295,69 @@
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 10px;
    }
+
+   .filter .flex-container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+   }
+
+   .founders__list {
+      grid-column-gap: 10px;
+   }
+
+   .founders__card {
+      height: 196px;
+   }
+
+   .header-freelancers {
+      background-image: url('/img/bg-images/bg-freelancers@mobile.jpg');
+   }
+
+   .header-boards {
+      background-image: url('/img/bg-images/bg-boards@mobile.jpg');
+   }
+
+   .header-completed {
+      background-image: url('/img/bg-images/bg-finished-projects@mobile.jpg');
+   }
+
+   .header-contact {
+      background-image: url('/img/bg-images/bg-intro@mobile.jpg');
+   }
+
+   .intro__bg {
+      background-image: url('/img/bg-images/bg-intro@mobile.jpg');
+   }
 }
 
 @include media-max(620px) {
    .grid-container {
       grid-template-columns: repeat(2, 1fr);
+   }
+
+   .filter .flex-container {
+      grid-template-columns: 1fr;
+   }
+
+   .founders__list {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+   }
+
+   .form-wrapper {
+      width: 100%;
+   }
+
+   .form__field .label {
+      width: 100%;
+   }
+
+   .auth__inner {
+      width: 100%;
+   }
+
+   .role label {
+      width: 48%;
    }
 }
 
