@@ -273,6 +273,113 @@
    .auth-signin, .auth-signup {
       padding-top: 145px;
    }
+
+   .profile__header {
+      margin-top: -60px;
+   }
+
+   .profile__owner {
+      align-items: flex-start;
+   }
+
+   .profile__avatar {
+      flex-shrink: 0;
+      width: 120px;
+      height: 120px;
+      margin-right: 20px;
+      border-width: 4px;
+   }
+
+   .profile__name {
+      margin-top: 20px;
+
+      h1 {
+         margin-bottom: 20px;
+         font-size: 24px;
+         line-height: 29px;
+         color: $WHITE_COLOR;
+      }
+   }
+
+   .profile__mail {
+      bottom: 0;
+      height: 27px;
+      padding: 5px;
+      font-size: 14px;
+      line-height: 16px;
+   }
+
+   .profile__mail-icon {
+      margin-right: 5px;
+
+      img {
+         width: 12px;
+      }
+
+      &::after {
+         width: 5px;
+         height: 5px;
+         top: 1px;
+         right: -2px;
+      }
+   }
+
+   .profile__main {
+      padding-top: 40px;
+   }
+
+   .profile__section__heading {
+      font-size: 16px;
+      line-height: 19px;
+   }
+
+   .profile__section__text {
+      font-size: 14px;
+      line-height: 17px;
+   }
+
+   .profile__section__empty {
+      img {
+         width: 80px;
+         margin-bottom: 15px;
+      }
+
+      p {
+         font-size: 14px;
+         line-height: 17px;
+      }
+   }
+
+   .card__edit {
+      top: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      padding: 5px;
+   }
+
+   .profile__education__item,
+   .profile__experience__item,
+   .profile__language__item {
+      padding-left: 20px;
+
+      &::before {
+         width: 15px;
+         height: 15px;
+      }
+   }
+
+   .profile__experience__heading,
+   .profile__education__heading,
+   .profile__language__heading {
+      font-size: 16px;
+      line-height: 19px;
+   }
+
+   .profile__links__link {
+      font-size: 14px;
+      line-height: 17px;
+   }
 }
 
 @include media-max(1000px) {
@@ -283,6 +390,11 @@
 
    .founders__card {
       height: 250px;
+   }
+
+   .profile__section--basic {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 24px;
    }
 }
 
@@ -328,6 +440,15 @@
    .intro__bg {
       background-image: url('/img/bg-images/bg-intro@mobile.jpg');
    }
+
+   .profile__section__main--grid {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+   }
+
+   .profile__experience__list, .profile__education__list {
+      grid-template-columns: 1fr;
+   }
 }
 
 @include media-max(620px) {
@@ -358,6 +479,38 @@
 
    .role label {
       width: 48%;
+   }
+
+   .profile__owner {
+      width: 100%;
+      margin-bottom: 20px;
+   }
+
+   .profile__name {
+      flex-grow: 1;
+
+      h1 {
+         max-width: 220px;
+         overflow: auto;
+         white-space: nowrap;
+      }
+   }
+
+   .profile__mail {
+      margin-left: auto;
+   }
+
+   .profile__section__header {
+      justify-content: space-between;
+   }
+
+   .profile__section--basic {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+   }
+
+   .profile__section__main--grid {
+      grid-template-columns: repeat(2, 1fr);
    }
 }
 
