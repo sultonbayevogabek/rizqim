@@ -404,6 +404,29 @@
    .modal__label::after {
       top: 0;
    }
+
+   .heading-404 {
+      font-size: 100px;
+      line-height: 120px;
+   }
+
+   .text-404 {
+      p, a {
+         font-size: 16px;
+         line-height: 16px;
+      }
+   }
+
+   .info-page__email-icon {
+      width: 100px;
+      margin-bottom: 30px;
+   }
+
+   .info-page__email-text {
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+   }
 }
 
 @include media-max(1000px) {
@@ -555,6 +578,16 @@
 
    .skills__add {
       margin-bottom: 20px;
+   }
+
+   .text-404 {
+      display: block;
+      text-align: center;
+
+      img, p {
+         margin-right: 0;
+         margin-bottom: 10px;
+      }
    }
 }
 
