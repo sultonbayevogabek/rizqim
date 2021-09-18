@@ -488,9 +488,9 @@
 
    .profile__name {
       flex-grow: 1;
+      overflow: hidden;
 
       h1 {
-         max-width: 220px;
          overflow: auto;
          white-space: nowrap;
       }
