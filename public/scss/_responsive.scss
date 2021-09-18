@@ -47,6 +47,11 @@
 }
 
 @include media-max(1130px) {
+   .button {
+      font-size: 14px;
+      line-height: 17px;
+   }
+
    .intro {
       height: auto;
 
@@ -380,6 +385,25 @@
       font-size: 14px;
       line-height: 17px;
    }
+
+   .modal {
+      padding-top: 75px;
+      padding-bottom: 75px;
+   }
+
+   .modal__heading {
+      font-size: 16px;
+      line-height: 19px;
+   }
+
+   .modal__input, .modal__textarea {
+      font-size: 14px;
+      line-height: 17px;
+   }
+
+   .modal__label::after {
+      top: 0;
+   }
 }
 
 @include media-max(1000px) {
@@ -449,6 +473,10 @@
    .profile__experience__list, .profile__education__list {
       grid-template-columns: 1fr;
    }
+
+   .modal__field__4 {
+      grid-template-columns: 1.5fr 1fr;
+   }
 }
 
 @include media-max(620px) {
@@ -512,10 +540,30 @@
    .profile__section__main--grid {
       grid-template-columns: repeat(2, 1fr);
    }
+
+   .modal__field {
+      grid-template-columns: 1fr;
+   }
+
+   .modal__submit {
+      justify-content: space-between;
+
+      .button {
+         width: 48%;
+      }
+   }
+
+   .skills__add {
+      margin-bottom: 20px;
+   }
 }
 
 @include media-max(500px) {
    .statistics {
       grid-template-columns: 1fr;
+   }
+
+   .add-language {
+      width: 100%;
    }
 }
