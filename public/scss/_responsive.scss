@@ -31,6 +31,12 @@
    }
 }
 
+@include media-max(1190px) {
+   .project-info {
+      width: 100%;
+   }
+}
+
 @include media-max(1160px) {
    .filter {
       .flex-container {
@@ -427,6 +433,17 @@
       line-height: 19px;
       text-align: center;
    }
+
+   .project-info__heading, .form-wrapper__heading {
+      font-size: 18px;
+      line-height: 22px;
+   }
+
+   .project-info__description, .project-info__value {
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 22px;
+   }
 }
 
 @include media-max(1000px) {
@@ -598,5 +615,10 @@
 
    .add-language {
       width: 100%;
+   }
+
+   .project-info__item {
+      width: 100%;
+      margin-right: 0 !important;
    }
 }

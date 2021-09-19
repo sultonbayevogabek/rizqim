@@ -20,6 +20,7 @@
 .project-info__additional {
    display: flex;
    align-items: center;
+   flex-wrap: wrap;
 }
 
 .project-info__item:first-child {
