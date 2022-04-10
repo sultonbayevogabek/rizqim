@@ -3,8 +3,7 @@ import { selectOne, selectAll, addClass, removeClass } from './_functions'
 export default () => {
     try {
         const form = selectOne('.form'),
-            submit = form.querySelector('button[type="submit"]'),
-            labels = form.querySelectorAll('.label')
+            submit = form.querySelector('button[type="submit"]')
 
         const inputs = selectAll('.input')
 
