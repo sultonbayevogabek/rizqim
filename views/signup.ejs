@@ -5,7 +5,7 @@
     <div class="auth auth-signup">
         <div class="container">
             <div class="auth__inner">
-                <form class="form" novalidate>
+                <form class="form" novalidate id="register-form">
                     <label class="label">
                         <span class="text">Ismingiz</span>
                         <input class="input" type="text" data-input-fname autocomplete="off">
@@ -23,11 +23,11 @@
                         <input class="input" type="password" data-input-password autocomplete="off">
                     </label>
                     <div class="label role after-none">
-                        <label>
+                        <label data-type="user">
                             <input class="input radio" type="radio" name="role" value="employer" data-input-role>
                             <span class="button button-outline">Ish beruvchi</span>
                         </label>
-                        <label>
+                        <label data-type="freelancer">
                             <input class="input radio" type="radio" name="role" value="freelancer" data-input-role>
                             <span class="button button-outline">Frilanser</span>
                         </label>

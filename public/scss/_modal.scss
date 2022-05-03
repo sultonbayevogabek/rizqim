@@ -25,6 +25,10 @@
    transform-origin: center center;
    opacity: 1;
    transform: scale(1);
+
+   &--small {
+      width: 500px;
+   }
 }
 
 .modal__close {

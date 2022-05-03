@@ -1,3 +1,8 @@
+<%
+function titleCase(word) {
+    return word[0].toUpperCase() + word.slice(1).toLowerCase()
+}
+%>
 <%- include('parts/header') %>
 
 <header class="header header-profile">
@@ -9,22 +14,21 @@
         <div class="flex-container">
             <div class="profile__owner">
                 <div class="profile__avatar">
-                    <picture>
-                        <source srcset="/img/users/user@1x.webp 1x, /img/users/user@2x.webp 2x" type="image/webp">
-                        <img srcset="/img/users/user@1x.jpg 1x, /img/users/user@2x.jpg 2x">
-                    </picture>
+                    <img src="<%= user.avatar %>" alt="<%= user.email %>">
+                    <label class="avatar-change">
+                        <img class="avatar-change__icon" src="/img/icons/camera.svg" alt="Camera icon">
+                        <input class="avatar-change__input d-none" type="file" accept=".png, .jpg">
+                    </label>
                 </div>
                 <div class="profile__name">
-                    <h1><%= user.firstName + ' ' + user.lastName %></h1>
-                    <p>Web Developer</p>
+                    <h1><%= titleCase(user.first_name) + ' ' + titleCase(user.last_name) %></h1>
+                    <% if (user.type === 'freelancer') { %>
+                        <p>Frilanser</p>
+                    <% } else { %>
+                        <p>Buyurtmachi</p>
+                    <% } %>
                 </div>
             </div>
-            <a class="profile__mail" href="/<%= user.username %>/mail">
-                <span class="profile__mail-icon profile__mail-icon--unread">
-                    <img src="/img/icons/email.svg" alt="email icon">
-                </span>
-                <span>Xabarlar</span>
-            </a>
         </div>
     </header>
     <main class="profile__main">
@@ -33,91 +37,138 @@
                 <div>
                     <header class="profile__section__header">
                         <h2 class="profile__section__heading">Ism, familiya</h2>
-                        <div class="profile__section__edit" title="O'zgartirish">
+                        <div class="profile__section__edit" data-full-name-edit-btn title="O'zgartirish">
                             <img src="/img/icons/edit.svg" alt="edit icon">
                         </div>
                     </header>
                     <main class="profile__section__main">
-                        <p class="profile__section__text">Og'abek Sultonbayev</p>
+                        <p class="profile__section__text">
+                            <%= titleCase(user.first_name) + ' ' + titleCase(user.last_name) %>
+                        </p>
                     </main>
                 </div>
                 <div>
                     <header class="profile__section__header">
                         <h2 class="profile__section__heading">Telefon raqam</h2>
-                        <div class="profile__section__edit" title="O'zgartirish">
+                        <div class="profile__section__edit" data-phone-edit-btn title="O'zgartirish">
                             <img src="/img/icons/edit.svg" alt="edit icon">
                         </div>
                     </header>
                     <main class="profile__section__main">
-                        <a class="profile__section__text" href="tel: +998999639773">+99 899 963 97 73</a>
+                        <% if (user.phone_number) { %>
+                            <p class="profile__section__text"><%= user.phone_number %></p>
+                        <% } else { %>
+                            <p class="profile__section__text">&horbar;</p>
+                        <% } %>
                     </main>
                 </div>
                 <div>
                     <header class="profile__section__header">
                         <h2 class="profile__section__heading">Elektron pochta</h2>
-                        <div class="profile__section__edit" title="O'zgartirish">
+                        <div class="profile__section__edit" data-email-edit-btn title="O'zgartirish">
                             <img src="/img/icons/edit.svg" alt="edit icon">
                         </div>
                     </header>
                     <main class="profile__section__main">
-                        <a class="profile__section__text" href="mailto: sultonbayevogabek@gmail.com" target="_blank">sultonbayevogabek@gmail.com</a>
+                        <p class="profile__section__text"><%= user.email %></p>
                     </main>
                 </div>
                 <div>
                     <header class="profile__section__header">
                         <h2 class="profile__section__heading">Telegram username</h2>
-                        <div class="profile__section__edit" title="O'zgartirish">
+                        <div class="profile__section__edit" data-telegram-edit-btn title="O'zgartirish">
                             <img src="/img/icons/edit.svg" alt="edit icon">
                         </div>
                     </header>
                     <main class="profile__section__main">
-                        <a class="profile__section__text" href="https://t.me/Ogabek19991031" target="_blank">@Ogabek19991031</a>
+                        <% if (user.telegram_username) { %>
+                            <p class="profile__section__text"><%= user.telegram_username %></p>
+                        <% } else { %>
+                            <p class="profile__section__text">&horbar;</p>
+                        <% } %>
+                    </main>
+                </div>
+                <div>
+                    <header class="profile__section__header">
+                        <h2 class="profile__section__heading">Veb sayt</h2>
+                        <div class="profile__section__edit" data-website-edit-btn title="O'zgartirish">
+                            <img src="/img/icons/edit.svg" alt="edit icon">
+                        </div>
+                    </header>
+                    <main class="profile__section__main">
+                        <% if (user.web_site) { %>
+                            <p class="profile__section__text"><%= user.web_site %></p>
+                        <% } else { %>
+                            <p class="profile__section__text">&horbar;</p>
+                        <% } %>
+                    </main>
+                </div>
+                <div>
+                    <header class="profile__section__header">
+                        <h2 class="profile__section__heading">Github(yoki Gitlab)</h2>
+                        <div class="profile__section__edit" data-git-edit-btn title="O'zgartirish">
+                            <img src="/img/icons/edit.svg" alt="edit icon">
+                        </div>
+                    </header>
+                    <main class="profile__section__main">
+                        <% if (user.git) { %>
+                            <p class="profile__section__text"><%= user.git %></p>
+                        <% } else { %>
+                            <p class="profile__section__text">&horbar;</p>
+                        <% } %>
                     </main>
                 </div>
             </section>
             <section class="profile__section">
                 <header class="profile__section__header">
                     <h2 class="profile__section__heading">O'zingiz haqingizda ma'lumot</h2>
-                    <div class="profile__section__edit" title="O'zgartirish">
+                    <div class="profile__section__edit" data-bio-edit-btn title="O'zgartirish">
                         <img src="/img/icons/edit.svg" alt="edit icon">
                     </div>
                 </header>
                 <main class="profile__section__main">
-                    <% if (5 > 1) { %>
+                    <% if (user.bio) { %>
+                        <p class="profile__section__text"><%= user.bio %></p>
+                    <% } else { %>
                         <div class="profile__section__empty">
                             <img src="/img/icons/empty.svg" alt="empty icon">
                             <p>Hozircha hech nima kiritilmagan</p>
                         </div>
-                    <% } else { %>
-                    <p class="profile__section__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                        ex ea commodo consequat.</p>
                     <% } %>
                 </main>
             </section>
             <section class="profile__section">
                 <header class="profile__section__header">
                     <h2 class="profile__section__heading">Portfolio</h2>
-                    <div class="profile__section__add" title="Qo'shish">
+                    <div class="profile__section__add" data-portfolio-add-btn title="Qo'shish">
                         <img src="/img/icons/add.svg" alt="edit icon">
                     </div>
                 </header>
-                <% if (5 === 1) { %>
+                <% if (!user.portfolios.length) { %>
                     <div class="profile__section__empty">
                         <img src="/img/icons/empty.svg" alt="empty icon">
                         <p>Hozircha hech nima kiritilmagan</p>
                     </div>
                 <% } else { %>
                     <main class="profile__section__main profile__section__main--grid">
-                        <% for (let i = 0; i < 4; i++) { %>
-                            <%- include('components/card', {
-                                cardTitle: 'Kun.uz Web Sayti',
-                                viewsCount: null,
-                                workersCount: null,
-                                cardType: 'frontend',
-                                cardLink: 'https://kun.uz',
-                                editable: true
-                            }) %>
+                        <% for (let i = 0; i < user.portfolios.length; i++) { %>
+                            <div class="card" title="<%= user.portfolios[i].project_name %>"
+                                 style="background-image: url(<%= user.portfolios[i].photo %>)">
+                                <div class="card__body">
+                                    <h3 class="card__heading"><%= user.portfolios[i].project_name %></h3>
+                                    <div class="card__statistic"></div>
+                                </div>
+                                <a class="card__link" target="_blank" href="<%= user.portfolios[i].project_link %>">Card
+                                    link</a>
+
+                                <div class="card__edit" title="O'chirish"
+                                     data-remove-portfolio-btn="<%= user.portfolios[i].id %>">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 30 30"
+                                         width="512px" height="512px">
+                                        <path d="M 13 3 A 1.0001 1.0001 0 0 0 11.986328 4 L 6 4 A 1.0001 1.0001 0 1 0 6 6 L 24 6 A 1.0001 1.0001 0 1 0 24 4 L 18.013672 4 A 1.0001 1.0001 0 0 0 17 3 L 13 3 z M 6 8 L 6 24 C 6 25.105 6.895 26 8 26 L 22 26 C 23.105 26 24 25.105 24 24 L 24 8 L 6 8 z"/>
+                                    </svg>
+                                </div>
+                            </div>
                         <% } %>
                     </main>
                 <% } %>
@@ -125,11 +176,11 @@
             <section class="profile__section">
                 <header class="profile__section__header">
                     <h2 class="profile__section__heading">Ishlagan joylaringiz</h2>
-                    <div class="profile__section__add" title="Qo'shish">
+                    <div class="profile__section__add" data-work-add-btn title="Qo'shish">
                         <img src="/img/icons/add.svg" alt="edit icon">
                     </div>
                 </header>
-                <% if (5 > 1) { %>
+                <% if (!user.experiences.length) { %>
                     <div class="profile__section__empty">
                         <img src="/img/icons/empty.svg" alt="empty icon">
                         <p>Hozircha hech nima kiritilmagan</p>
@@ -137,27 +188,18 @@
                 <% } else { %>
                     <main class="profile__section__main">
                         <ul class="profile__experience__list">
-                            <li class="profile__experience__item">
-                                <h3 class="profile__experience__heading">
-                                    <span>Front End Dasturchi. 2019, noyabr - 2020, dekabr</span>
-                                    <img class="profile__experience__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
-                                </h3>
-                                <p class="profile__section__text">ECMA Group dasturlash firmasida Front End dasturchi bo'lib ishlaganman. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, nostrum.</p>
-                            </li>
-                            <li class="profile__experience__item">
-                                <h3 class="profile__experience__heading">
-                                    <span>Front End Mentor. 2019, noyabr - 2020, dekabr</span>
-                                    <img class="profile__experience__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
-                                </h3>
-                                <p class="profile__section__text">PDP IT akademiyasida Front End mentor bo'lib ishladim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam magnam maxime neque obcaecati repellat tempore.</p>
-                            </li>
-                            <li class="profile__experience__item">
-                                <h3 class="profile__experience__heading">
-                                    <span>Front End Dasturchi. 2020, noyabr - 2021, dekabr</span>
-                                    <img class="profile__experience__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
-                                </h3>
-                                <p class="profile__section__text">Pixer IT firmasida front end dasturchi bo'lib ishladim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequatur corporis eligendi, enim ex expedita id illo illum itaque minus mollitia necessitatibus odit perferendis perspiciatis quia ullam voluptates? Impedit, rerum?</p>
-                            </li>
+                            <% for (let exp of user.experiences) { %>
+                                <li class="profile__experience__item">
+                                    <h3 class="profile__experience__heading">
+                                        <span><%= exp.position %>. <%= exp.start_year %>, <%= exp.start_month %> - <%= exp.finish_year %><%= exp.finish_month === 'hozirgacha' ? '' : ', ' + exp.finish_month %></span>
+                                        <svg class="profile__experience__delete" data-remove-exp-btn="<%= exp.id %>" xmlns="http://www.w3.org/2000/svg"
+                                             fill="#656565" viewBox="0 0 30 30" width="512px" height="512px">
+                                            <path d="M 13 3 A 1.0001 1.0001 0 0 0 11.986328 4 L 6 4 A 1.0001 1.0001 0 1 0 6 6 L 24 6 A 1.0001 1.0001 0 1 0 24 4 L 18.013672 4 A 1.0001 1.0001 0 0 0 17 3 L 13 3 z M 6 8 L 6 24 C 6 25.105 6.895 26 8 26 L 22 26 C 23.105 26 24 25.105 24 24 L 24 8 L 6 8 z"/>
+                                        </svg>
+                                    </h3>
+                                    <p class="profile__section__text"><%= exp.description ? exp.description : '―' %></p>
+                                </li>
+                            <% } %>
                         </ul>
                     </main>
                 <% } %>
@@ -165,11 +207,11 @@
             <section class="profile__section">
                 <header class="profile__section__header">
                     <h2 class="profile__section__heading">O'qigan joylaringiz</h2>
-                    <div class="profile__section__add" title="Qo'shish">
+                    <div class="profile__section__add" title="Qo'shish" data-education-add-btn>
                         <img src="/img/icons/add.svg" alt="edit icon">
                     </div>
                 </header>
-                <% if (5 === 1) { %>
+                <% if (!user.educations.length) { %>
                     <div class="profile__section__empty">
                         <img src="/img/icons/empty.svg" alt="empty icon">
                         <p>Hozircha hech nima kiritilmagan</p>
@@ -177,20 +219,18 @@
                 <% } else { %>
                     <main class="profile__section__main">
                         <ul class="profile__education__list">
-                            <li class="profile__education__item">
-                                <h3 class="profile__education__heading">
-                                    <span>PDP akademiyasi. 2019, noyabr - 2020, dekabr</span>
-                                    <img class="profile__education__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
-                                </h3>
-                                <p class="profile__section__text">ECMA Group dasturlash firmasida Front End dasturchi bo'lib ishlaganman. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, nostrum.</p>
-                            </li>
-                            <li class="profile__education__item">
-                                <h3 class="profile__education__heading">
-                                    <span>Najot Ta'lim o'quv markazi. 2019, noyabr - 2020, dekabr</span>
-                                    <img class="profile__education__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
-                                </h3>
-                                <p class="profile__section__text">PDP IT akademiyasida Front End mentor bo'lib ishladim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam magnam maxime neque obcaecati repellat tempore.</p>
-                            </li>
+                            <% for (let edu of user.educations) { %>
+                                <li class="profile__education__item">
+                                    <h3 class="profile__education__heading">
+                                        <span><%= edu.edu_name %>. <%= edu.start_year %>, <%= edu.start_month %> - <%= edu.finish_year %><%= edu.finish_month === 'hozirgacha' ? '' : ', ' + edu.finish_month %></span>
+                                        <svg class="profile__experience__delete" data-remove-edu-btn="<%= edu.id %>" xmlns="http://www.w3.org/2000/svg"
+                                             fill="#656565" viewBox="0 0 30 30" width="512px" height="512px">
+                                            <path d="M 13 3 A 1.0001 1.0001 0 0 0 11.986328 4 L 6 4 A 1.0001 1.0001 0 1 0 6 6 L 24 6 A 1.0001 1.0001 0 1 0 24 4 L 18.013672 4 A 1.0001 1.0001 0 0 0 17 3 L 13 3 z M 6 8 L 6 24 C 6 25.105 6.895 26 8 26 L 22 26 C 23.105 26 24 25.105 24 24 L 24 8 L 6 8 z"/>
+                                        </svg>
+                                    </h3>
+                                    <p class="profile__section__text"><%= edu.description ? edu.description : '―'%></p>
+                                </li>
+                            <% } %>
                         </ul>
                     </main>
                 <% } %>
@@ -198,11 +238,11 @@
             <section class="profile__section">
                 <header class="profile__section__header">
                     <h2 class="profile__section__heading">Biladigan tillaringiz</h2>
-                    <div class="profile__section__add" title="Qo'shish">
+                    <div class="profile__section__add" title="Qo'shish" data-add-language-btn>
                         <img src="/img/icons/add.svg" alt="edit icon">
                     </div>
                 </header>
-                <% if (5 > 1) { %>
+                <% if (!user.languages.length) { %>
                     <div class="profile__section__empty">
                         <img src="/img/icons/empty.svg" alt="empty icon">
                         <p>Hozircha hech nima kiritilmagan</p>
@@ -210,34 +250,18 @@
                 <% } else { %>
                     <main class="profile__section__main">
                         <ul class="profile__language__list">
-                            <li class="profile__language__item">
-                                <h3 class="profile__language__heading">
-                                    <span>O'zbek tili</span>
-                                    <img class="profile__language__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
-                                </h3>
-                                <p class="profile__section__text">Erkin darajada</p>
-                            </li>
-                            <li class="profile__language__item">
-                                <h3 class="profile__language__heading">
-                                    <span>Ingliz tili</span>
-                                    <img class="profile__language__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
-                                </h3>
-                                <p class="profile__section__text">O'rta darajada</p>
-                            </li>
-                            <li class="profile__language__item">
-                                <h3 class="profile__language__heading">
-                                    <span>Rus tili</span>
-                                    <img class="profile__language__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
-                                </h3>
-                                <p class="profile__section__text">Erkin darajada</p>
-                            </li>
-                            <li class="profile__language__item">
-                                <h3 class="profile__language__heading">
-                                    <span>Yapon tili</span>
-                                    <img class="profile__language__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
-                                </h3>
-                                <p class="profile__section__text">O'rta darajada</p>
-                            </li>
+                            <% for (let lang of user.languages) { %>
+                                <li class="profile__language__item">
+                                    <h3 class="profile__language__heading">
+                                        <span><%= lang.language %></span>
+                                        <svg class="profile__experience__delete" data-remove-lang-btn="<%= lang.id %>" xmlns="http://www.w3.org/2000/svg"
+                                             fill="#656565" viewBox="0 0 30 30" width="512px" height="512px">
+                                            <path d="M 13 3 A 1.0001 1.0001 0 0 0 11.986328 4 L 6 4 A 1.0001 1.0001 0 1 0 6 6 L 24 6 A 1.0001 1.0001 0 1 0 24 4 L 18.013672 4 A 1.0001 1.0001 0 0 0 17 3 L 13 3 z M 6 8 L 6 24 C 6 25.105 6.895 26 8 26 L 22 26 C 23.105 26 24 25.105 24 24 L 24 8 L 6 8 z"/>
+                                        </svg>
+                                    </h3>
+                                    <p class="profile__section__text"><%= lang.degree %></p>
+                                </li>
+                            <% } %>
                         </ul>
                     </main>
                 <% } %>
@@ -245,11 +269,11 @@
             <section class="profile__section">
                 <header class="profile__section__header">
                     <h2 class="profile__section__heading">Ko'nikmalaringiz</h2>
-                    <div class="profile__section__add" title="Qo'shish">
+                    <div class="profile__section__add" title="Qo'shish" data-add-skill-btn>
                         <img src="/img/icons/add.svg" alt="add icon">
                     </div>
                 </header>
-                <% if (5 === 1) { %>
+                <% if (!user.skills?.length) { %>
                     <div class="profile__section__empty">
                         <img src="/img/icons/empty.svg" alt="empty icon">
                         <p>Hozircha hech nima kiritilmagan</p>
@@ -257,129 +281,24 @@
                 <% } else { %>
                     <main class="profile__section__main">
                         <ul class="profile__skills__list">
-                            <li class="profile__skills__item">
-                                <span class="profile__skills__name">HTML</span>
-                                <span class="profile__skills__remove" title="Olib tashlash">
-                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
-                            </span>
-                            </li>
-                            <li class="profile__skills__item">
-                                <span class="profile__skills__name">CSS</span>
-                                <span class="profile__skills__remove" title="Olib tashlash">
-                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
-                            </span>
-                            </li>
-                            <li class="profile__skills__item">
-                                <span class="profile__skills__name">JavaScript</span>
-                                <span class="profile__skills__remove" title="Olib tashlash">
-                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
-                            </span>
-                            </li>
-                            <li class="profile__skills__item">
-                                <span class="profile__skills__name">Sass</span>
-                                <span class="profile__skills__remove" title="Olib tashlash">
-                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
-                            </span>
-                            </li>
-                            <li class="profile__skills__item">
-                                <span class="profile__skills__name">Bootstrap</span>
-                                <span class="profile__skills__remove" title="Olib tashlash">
-                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
-                            </span>
-                            </li>
-                            <li class="profile__skills__item">
-                                <span class="profile__skills__name">Webpack</span>
-                                <span class="profile__skills__remove" title="Olib tashlash">
-                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
-                            </span>
-                            </li>
-                            <li class="profile__skills__item">
-                                <span class="profile__skills__name">Webpack</span>
-                                <span class="profile__skills__remove" title="Olib tashlash">
-                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
-                            </span>
-                            </li>
-                            <li class="profile__skills__item">
-                                <span class="profile__skills__name">Babel</span>
-                                <span class="profile__skills__remove" title="Olib tashlash">
-                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
-                            </span>
-                            </li>
-                            <li class="profile__skills__item">
-                                <span class="profile__skills__name">Git</span>
-                                <span class="profile__skills__remove" title="Olib tashlash">
-                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
-                            </span>
-                            </li>
-                            <li class="profile__skills__item">
-                                <span class="profile__skills__name">Vue</span>
-                                <span class="profile__skills__remove" title="Olib tashlash">
-                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
-                            </span>
-                            </li>
-                            <li class="profile__skills__item">
-                                <span class="profile__skills__name">NodeJS</span>
-                                <span class="profile__skills__remove" title="Olib tashlash">
-                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
-                            </span>
-                            </li>
-                            <li class="profile__skills__item">
-                                <span class="profile__skills__name">ExpressJS</span>
-                                <span class="profile__skills__remove" title="Olib tashlash">
-                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
-                            </span>
-                            </li>
-                            <li class="profile__skills__item">
-                                <span class="profile__skills__name">Postgres</span>
-                                <span class="profile__skills__remove" title="Olib tashlash">
-                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
-                            </span>
-                            </li>
-                            <li class="profile__skills__item">
-                                <span class="profile__skills__name">Mongo</span>
-                                <span class="profile__skills__remove" title="Olib tashlash">
-                                <img src="/img/icons/times-blue.svg" alt="remove skill icon">
-                            </span>
-                            </li>
+                            <% for (let skill of user.skills) { %>
+                                <li class="profile__skills__item">
+                                    <span class="profile__skills__name"><%= skill %></span>
+                                    <span class="profile__skills__remove" title="Olib tashlash">
+                                        <img src="/img/icons/times-blue.svg" alt="remove skill icon">
+                                    </span>
+                                </li>
+                            <% } %>
                         </ul>
                     </main>
                 <% } %>
             </section>
             <section class="profile__section">
                 <header class="profile__section__header">
-                    <h2 class="profile__section__heading">Ijtimoiy tarmoqdagi sahifalaringiz</h2>
-                    <div class="profile__section__add" title="Qo'shish">
-                        <img src="/img/icons/add.svg" alt="add icon">
-                    </div>
+                    <h2 class="profile__section__heading">Profilning umumiy ko'rinish. Profildan chiqish</h2>
                 </header>
-                <% if (5 < 1) { %>
-                    <div class="profile__section__empty">
-                        <img src="/img/icons/empty.svg" alt="empty icon">
-                        <p>Hozircha hech nima kiritilmagan</p>
-                    </div>
-                <% } else { %>
-                    <main class="profile__section__main">
-                        <ul class="profile__links__list">
-                            <li class="profile__links__item">
-                                <a class="profile__links__link" href="#" target="_blank">
-                                    <img src="/img/icons/site.svg" alt="network icon">
-                                    <span>Web sayt</span>
-                                    <img class="profile__link__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
-                                </a>
-                                <a class="profile__links__link" href="#" target="_blank">
-                                    <img src="/img/icons/youtube.svg" alt="youtube icon">
-                                    <span>YouTube</span>
-                                    <img class="profile__link__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
-                                </a>
-                                <a class="profile__links__link" href="#" target="_blank">
-                                    <img src="/img/icons/git.svg" alt="git icon">
-                                    <span>Github</span>
-                                    <img class="profile__link__edit" src="/img/icons/edit.svg" width="16" height="16" alt="edit icon" title="O'zgartirish">
-                                </a>
-                            </li>
-                        </ul>
-                    </main>
-                <% } %>
+                <a class="profile__general" href="/freelancers/<%= user.id %>">Profilning boshqalarda ko'rinishi</a>
+                <a class="profile__exit" href="/exit">Chiqish</a>
             </section>
         </div>
     </main>

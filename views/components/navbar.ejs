@@ -1,3 +1,9 @@
+<%
+    function titleCase(word) {
+       return word[0].toUpperCase() + word.slice(1).toLowerCase()
+    }
+%>
+
 <nav class="nav">
     <div class="flex-container">
         <a class="logo" href="/">
@@ -40,7 +46,7 @@
             </li>
             <% if (user) { %>
                 <li class="nav__li nav__li--mobile">
-                    <a class="nav__link" href="/<%= user.username %>"><%= user.firstName + ' ' + user.lastName %></a>
+                    <a class="nav__link" href="/<%= user.email %>"><%= user.firstName + ' ' + user.lastName %></a>
                 </li>
             <% } else { %>
                 <li class="nav__li nav__li--mobile">
@@ -52,13 +58,10 @@
             </button>
         </ul>
         <% if (user) { %>
-            <a class="user" href="/<%= user.username %>" title="Shaxsiy profilga kirish">
-                <span><%= user.firstName + ' ' + user.lastName %></span>
+            <a class="user" href="/profile" title="Shaxsiy profilga kirish">
+                <span><%= titleCase(user.first_name) + ' ' + titleCase(user.last_name) %></span>
                 <div class="user-img">
-                    <picture>
-                        <source srcset="/img/users/user@1x.webp 1x, /img/users/user@2x.webp 2x" type="image/webp">
-                        <img srcset="/img/users/user@1x.jpg 1x, /img/users/user@2x.jpg 2x">
-                    </picture>
+                    <img src="<%= user.avatar %>" alt="">
                 </div>
             </a>
         <% } else { %>

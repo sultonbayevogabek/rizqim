@@ -1,3 +1,9 @@
+<%
+    function titleCase(word) {
+        return word[0].toUpperCase() + word.slice(1).toLowerCase()
+    }
+%>
+
 <%- include('parts/header') %>
 
 <header class="header header-freelancers">
@@ -14,15 +20,16 @@
 <main class="main">
     <div class="board-list">
         <div class="grid-container">
-            <% for (let i = 0; i < 16; i++) { %>
-                <%- include('components/card', {
-                    cardTitle: 'Akbar Alixanov',
-                    viewsCount: null,
-                    workersCount: null,
-                    cardType: 'frontend',
-                    cardLink: '/posts/1',
-                    editable: false
-                }) %>
+            <% for (let freelancer of freelancers) { %>
+                <div class="card" title="<%= titleCase(freelancer.first_name) + ' ' + titleCase(freelancer.last_name) %>" style="background-image: url(<%= freelancer.avatar %>)">
+                <div class="card__body">
+                    <h3 class="card__heading"><%= freelancer.first_name + ' ' + freelancer.last_name %></h3>
+                    <div class="card__statistic"></div>
+                </div>
+                <a class="card__link" href="/freelancers/<%= freelancer.id %>">
+                    card link
+                </a>
+            </div>
             <% } %>
         </div>
         <div class="pagination-container">

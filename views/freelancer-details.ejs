@@ -1,0 +1,239 @@
+<%
+function titleCase(word) {
+    return word[0].toUpperCase() + word.slice(1).toLowerCase()
+}
+%>
+<%- include('parts/header') %>
+
+<header class="header header-profile">
+    <%- include('components/navbar', { logo: 'white' }) %>
+</header>
+
+<section class="profile">
+    <header class="profile__header">
+        <div class="flex-container">
+            <div class="profile__owner">
+                <div class="profile__avatar">
+                    <img src="<%= freelancer.avatar %>" alt="<%= freelancer.email %>">
+                </div>
+                <div class="profile__name">
+                    <h1><%= titleCase(freelancer.first_name) + ' ' + titleCase(freelancer.last_name) %></h1>
+                    <% if (freelancer.type === 'freelancer') { %>
+                        <p>Frilanser</p>
+                    <% } else { %>
+                        <p>Buyurtmachi</p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="profile__main">
+        <div class="container">
+            <section class="profile__section profile__section--basic">
+                <div>
+                    <header class="profile__section__header">
+                        <h2 class="profile__section__heading">Ism, familiya</h2>
+                    </header>
+                    <main class="profile__section__main">
+                        <p class="profile__section__text">
+                            <%= titleCase(freelancer.first_name) + ' ' + titleCase(freelancer.last_name) %>
+                        </p>
+                    </main>
+                </div>
+                <div>
+                    <header class="profile__section__header">
+                        <h2 class="profile__section__heading">Telefon raqami</h2>
+                    </header>
+                    <main class="profile__section__main">
+                        <% if (freelancer.phone_number) { %>
+                            <p class="profile__section__text"><%= freelancer.phone_number %></p>
+                        <% } else { %>
+                            <p class="profile__section__text">&horbar;</p>
+                        <% } %>
+                    </main>
+                </div>
+                <div>
+                    <header class="profile__section__header">
+                        <h2 class="profile__section__heading">Elektron pochtasi</h2>
+                    </header>
+                    <main class="profile__section__main">
+                        <p class="profile__section__text"><%= freelancer.email %></p>
+                    </main>
+                </div>
+                <div>
+                    <header class="profile__section__header">
+                        <h2 class="profile__section__heading">Telegram manzili</h2>
+                    </header>
+                    <main class="profile__section__main">
+                        <% if (freelancer.telegram_username) { %>
+                            <p class="profile__section__text"><%= freelancer.telegram_username %></p>
+                        <% } else { %>
+                            <p class="profile__section__text">&horbar;</p>
+                        <% } %>
+                    </main>
+                </div>
+                <div>
+                    <header class="profile__section__header">
+                        <h2 class="profile__section__heading">Veb sayti</h2>
+                    </header>
+                    <main class="profile__section__main">
+                        <% if (freelancer.web_site) { %>
+                            <p class="profile__section__text"><%= freelancer.web_site %></p>
+                        <% } else { %>
+                            <p class="profile__section__text">&horbar;</p>
+                        <% } %>
+                    </main>
+                </div>
+                <div>
+                    <header class="profile__section__header">
+                        <h2 class="profile__section__heading">Githubi(yoki Gitlabi)</h2>
+                    </header>
+                    <main class="profile__section__main">
+                        <% if (freelancer.git) { %>
+                            <p class="profile__section__text"><%= freelancer.git %></p>
+                        <% } else { %>
+                            <p class="profile__section__text">&horbar;</p>
+                        <% } %>
+                    </main>
+                </div>
+            </section>
+            <section class="profile__section">
+                <header class="profile__section__header">
+                    <h2 class="profile__section__heading">Freelancer haqida</h2>
+                </header>
+                <main class="profile__section__main">
+                    <% if (freelancer.bio) { %>
+                        <p class="profile__section__text"><%= freelancer.bio %></p>
+                    <% } else { %>
+                        <div class="profile__section__empty">
+                            <img src="/img/icons/empty.svg" alt="empty icon">
+                            <p>Hozircha hech nima kiritilmagan</p>
+                        </div>
+                    <% } %>
+                </main>
+            </section>
+            <section class="profile__section">
+                <header class="profile__section__header">
+                    <h2 class="profile__section__heading">Portfoliosi</h2>
+                </header>
+                <% if (!freelancer.portfolios.length) { %>
+                    <div class="profile__section__empty">
+                        <img src="/img/icons/empty.svg" alt="empty icon">
+                        <p>Hozircha hech nima kiritilmagan</p>
+                    </div>
+                <% } else { %>
+                    <main class="profile__section__main profile__section__main--grid">
+                        <% for (let i = 0; i < freelancer.portfolios.length; i++) { %>
+                            <div class="card" title="<%= freelancer.portfolios[i].project_name %>"
+                                 style="background-image: url(<%= freelancer.portfolios[i].photo %>)">
+                                <div class="card__body">
+                                    <h3 class="card__heading"><%= freelancer.portfolios[i].project_name %></h3>
+                                    <div class="card__statistic"></div>
+                                </div>
+                                <a class="card__link" target="_blank" href="<%= freelancer.portfolios[i].project_link %>">Card
+                                    link</a>
+                            </div>
+                        <% } %>
+                    </main>
+                <% } %>
+            </section>
+            <section class="profile__section">
+                <header class="profile__section__header">
+                    <h2 class="profile__section__heading">Ishlagan joylari</h2>
+                </header>
+                <% if (!freelancer.experiences.length) { %>
+                    <div class="profile__section__empty">
+                        <img src="/img/icons/empty.svg" alt="empty icon">
+                        <p>Hozircha hech nima kiritilmagan</p>
+                    </div>
+                <% } else { %>
+                    <main class="profile__section__main">
+                        <ul class="profile__experience__list">
+                            <% for (let exp of freelancer.experiences) { %>
+                                <li class="profile__experience__item">
+                                    <h3 class="profile__experience__heading">
+                                        <span><%= exp.position %>. <%= exp.start_year %>, <%= exp.start_month %> - <%= exp.finish_year %><%= exp.finish_month === 'hozirgacha' ? '' : ', ' + exp.finish_month %></span>
+                                    </h3>
+                                    <p class="profile__section__text"><%= exp.description ? exp.description : '―' %></p>
+                                </li>
+                            <% } %>
+                        </ul>
+                    </main>
+                <% } %>
+            </section>
+            <section class="profile__section">
+                <header class="profile__section__header">
+                    <h2 class="profile__section__heading">Ma'lumoti</h2>
+                </header>
+                <% if (!freelancer.educations.length) { %>
+                    <div class="profile__section__empty">
+                        <img src="/img/icons/empty.svg" alt="empty icon">
+                        <p>Hozircha hech nima kiritilmagan</p>
+                    </div>
+                <% } else { %>
+                    <main class="profile__section__main">
+                        <ul class="profile__education__list">
+                            <% for (let edu of freelancer.educations) { %>
+                                <li class="profile__education__item">
+                                    <h3 class="profile__education__heading">
+                                        <span><%= edu.edu_name %>. <%= edu.start_year %>, <%= edu.start_month %> - <%= edu.finish_year %><%= edu.finish_month === 'hozirgacha' ? '' : ', ' + edu.finish_month %></span>
+                                    </h3>
+                                    <p class="profile__section__text"><%= edu.description ? edu.description : '―'%></p>
+                                </li>
+                            <% } %>
+                        </ul>
+                    </main>
+                <% } %>
+            </section>
+            <section class="profile__section">
+                <header class="profile__section__header">
+                    <h2 class="profile__section__heading">Biladigan tillari</h2>
+                </header>
+                <% if (!freelancer.languages.length) { %>
+                    <div class="profile__section__empty">
+                        <img src="/img/icons/empty.svg" alt="empty icon">
+                        <p>Hozircha hech nima kiritilmagan</p>
+                    </div>
+                <% } else { %>
+                    <main class="profile__section__main">
+                        <ul class="profile__language__list">
+                            <% for (let lang of freelancer.languages) { %>
+                                <li class="profile__language__item">
+                                    <h3 class="profile__language__heading">
+                                        <span><%= lang.language %></span>
+                                    </h3>
+                                    <p class="profile__section__text"><%= lang.degree %></p>
+                                </li>
+                            <% } %>
+                        </ul>
+                    </main>
+                <% } %>
+            </section>
+            <section class="profile__section">
+                <header class="profile__section__header">
+                    <h2 class="profile__section__heading">Ko'nikmalari</h2>
+                </header>
+                <% if (!freelancer.skills?.length) { %>
+                    <div class="profile__section__empty">
+                        <img src="/img/icons/empty.svg" alt="empty icon">
+                        <p>Hozircha hech nima kiritilmagan</p>
+                    </div>
+                <% } else { %>
+                    <main class="profile__section__main">
+                        <ul class="profile__skills__list">
+                            <% for (let skill of freelancer.skills) { %>
+                                <li class="profile__skills__item">
+                                    <span class="profile__skills__name mr-0"><%= skill %></span>
+                                </li>
+                            <% } %>
+                        </ul>
+                    </main>
+                <% } %>
+            </section>
+        </div>
+    </main>
+</section>
+
+<%- include('components/modal') %>
+<%- include('components/footer') %>
+<%- include('parts/footer') %>

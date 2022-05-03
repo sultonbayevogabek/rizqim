@@ -1,37 +1,48 @@
 @import "variables";
 
+.toaster-list {
+  position: fixed;
+  z-index: 10;
+  top: 20px;
+  right: 20px;
+  width: 330px;
+}
+
 .toaster {
-   position: fixed;
-   top: 20px;
-   right: 20px;
-   width: 330px;
-   padding: 20px 80px 20px 30px;
+  width: 330px;
+  padding: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
 
-   &__text {
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 19px;
-      color: $WHITE_COLOR;
-   }
+  &__text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: $WHITE_COLOR;
+  }
 
-   &--error {
-      background-color: rgba(255, 67, 67, 0.8);
-   }
+  &--error {
+    background-color: rgba(255, 67, 67);
+  }
 
-   &--success {
-      background-color: rgba(23, 220, 66, 0.8);
-   }
+  &--warning {
+    background-color: #ffc107;
+  }
 
-   &__close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      background-color: transparent;
-      cursor: pointer;
-   }
+  &--success {
+    background-color: rgba(23, 220, 66);
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: transparent;
+    cursor: pointer;
+  }
 }

@@ -500,26 +500,26 @@ img {
 }
 
 .container {
-  max-width: 1220px;
+  max-width: 1230px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1220px;
+  max-width: 1230px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 24px;
-  max-width: 1220px;
+  max-width: 1230px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 .d-none {
@@ -582,6 +582,14 @@ img {
   height: 100px;
   transform: translate(-50%, -50%) scale(0);
   animation: scale 0.5s ease-out;
+}
+
+.mr-0 {
+  margin-right: 0 !important;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
 }
 
 @keyframes scale {
@@ -935,7 +943,7 @@ button[disabled]:hover {
   justify-content: center;
   width: 35px;
   height: 35px;
-  padding: 7px;
+  padding: 5px;
   border: 3px solid #FFFFFF;
   border-radius: 50%;
   cursor: pointer;
@@ -1464,14 +1472,11 @@ button[disabled]:hover {
   background-size: cover;
   background-position: center;
 }
-.founders__card--suhrob {
-  background-image: url("/img/founders/founder-1@1x.jpg");
-}
-.founders__card--asadbek {
-  background-image: url("/img/founders/founder-2@1x.jpg");
-}
 .founders__card--ogabek {
-  background-image: url("/img/founders/founder-3@1x.jpg");
+  background-image: url("/img/founders/ogabek.jpg");
+}
+.founders__card--mehriban {
+  background-image: url("/img/founders/mehriban.jpg");
 }
 
 .founder__name {
@@ -1573,12 +1578,19 @@ button[disabled]:hover {
   color: #646975;
 }
 
-.toaster {
+.toaster-list {
   position: fixed;
+  z-index: 10;
   top: 20px;
   right: 20px;
   width: 330px;
-  padding: 20px 80px 20px 30px;
+}
+
+.toaster {
+  width: 330px;
+  padding: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 .toaster__text {
   font-weight: 500;
@@ -1587,10 +1599,13 @@ button[disabled]:hover {
   color: #FFFFFF;
 }
 .toaster--error {
-  background-color: rgba(255, 67, 67, 0.8);
+  background-color: #ff4343;
+}
+.toaster--warning {
+  background-color: #ffc107;
 }
 .toaster--success {
-  background-color: rgba(23, 220, 66, 0.8);
+  background-color: #17dc42;
 }
 .toaster__close {
   position: absolute;
@@ -1619,6 +1634,7 @@ button[disabled]:hover {
 }
 
 .profile__avatar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1630,9 +1646,42 @@ button[disabled]:hover {
   overflow: hidden;
   filter: drop-shadow(0 6px 24px rgba(32, 68, 160, 0.18));
 }
-.profile__avatar img {
+.profile__avatar > img {
   width: 100%;
   object-fit: cover;
+}
+.profile__avatar:hover .avatar-change {
+  bottom: 0;
+}
+
+.profile__general {
+  color: #17DC42;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.profile__exit {
+  color: #FF3232;
+  display: inline-block;
+}
+
+.avatar-change {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: -150%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+
+.avatar-change__icon {
+  width: 50px;
+  opacity: 0.7;
 }
 
 .profile__name h1 {
@@ -1700,7 +1749,7 @@ button[disabled]:hover {
 .profile__section--basic {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 24px;
+  grid-gap: 24px;
 }
 
 .profile__section__header {
@@ -1710,10 +1759,10 @@ button[disabled]:hover {
 }
 
 .profile__section__heading {
-  margin-right: 20px;
+  margin-right: 10px;
   font-weight: 600;
   font-size: 24px;
-  line-height: 29px;
+  line-height: 38px;
   color: #122860;
 }
 
@@ -1721,9 +1770,15 @@ button[disabled]:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
+  width: 38px;
+  height: 38px;
+  padding: 10px;
   cursor: pointer;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.profile__section__edit:hover {
+  background-color: #C6CAD3;
 }
 .profile__section__edit img {
   width: 100%;
@@ -1733,9 +1788,15 @@ button[disabled]:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
+  width: 38px;
+  height: 38px;
+  padding: 5px;
   cursor: pointer;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.profile__section__add:hover {
+  background-color: #C6CAD3;
 }
 .profile__section__add img {
   width: 100%;
@@ -1811,6 +1872,20 @@ button[disabled]:hover {
 .profile__link__edit {
   margin-left: 10px;
   cursor: pointer;
+}
+
+.profile__experience__delete {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.profile__experience__heading,
+.profile__education__heading,
+.profile__language__heading {
+  display: flex;
+  align-items: center;
 }
 
 .profile__language__list {
@@ -1921,6 +1996,9 @@ button[disabled]:hover {
   transform-origin: center center;
   opacity: 1;
   transform: scale(1);
+}
+.modal__content--small {
+  width: 500px;
 }
 
 .modal__close {
