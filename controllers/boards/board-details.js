@@ -11,6 +11,7 @@ module.exports = async (req, res) => {
             is_completed: false
         }
     })
+
     res.render('boards', {
         title: `E'lonlar | Rizqim`,
         path: '/boards',
