@@ -1,7 +1,7 @@
 module.exports = async (req, res) => {
-    res.render('dashboard', {
+    res.render('admin/dashboard', {
         title: 'Admin Dashboard',
-        path: '/admin/dashboard',
+        path: 'dashboard',
         user: req.user ? req.user : null
     })
 }

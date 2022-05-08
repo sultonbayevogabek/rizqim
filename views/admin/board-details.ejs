@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>E'lon tafsilotlari</title>
+</head>
+<body>
+
+
+<div class="admin">
+    <%- include('sidebar') %>
+    <main class="admin__main">
+        <h2 class="h5 mb-3"><%= board.title %></h2>
+        <form class="row mb-5" id="create-board">
+            <label class="col-12 mb-3">
+                <img class="w-100" src="<%= board.img_url %>" alt="">
+            </label>
+            <label class="col-6 mb-3">
+                <span class="mb-1 text-muted">Loyihaning nomi</span>
+                <input class="form-control" type="text" placeholder="Loyihaning nomini kiriting" value="<%= board.title %>">
+            </label>
+            <label class="col-6 mb-3">
+                <span class="mb-1 text-muted">Loyihaning byudjeti(dollarda - $)</span>
+                <input class="form-control" type="number" placeholder="Loyihaning byudjetini kiriting" value="<%= board.budget %>">
+            </label>
+            <label class="col-12 mb-3">
+                <span class="mb-1 text-muted">Loyihani tavsiflovchi matn</span>
+                <textarea class="form-control" style="min-height: 150px" type="text" placeholder="Loyihani tavsiflovchi matn kiriting"><%= board.description %></textarea>
+            </label>
+            <label class="col-6 mb-3">
+                <span class="mb-1 text-muted">Loyiha ТЗ si va qo'shimcha fayllarga link(Google drive yoki boshqa)</span>
+                <input class="form-control" type="url" placeholder="Qo'shimcha materiallar uchun link" value="<%= board.materials_link %>">
+            </label>
+            <label class="col-6 mb-3">
+                <span class="mb-1 text-muted">Nomzodlarni qabul qilishning oxirgi sanasi</span>
+                <input class="form-control" type="date" value="<%= board.acceptance_data %>">
+            </label>
+            <label class="col-6 mb-3">
+                <span class="mb-1 text-muted">Loyihani topshirishning oxirgi sanasi</span>
+                <input class="form-control" type="date" value="<%= board.finish_data %>">
+            </label>
+            <label class="col-6 mb-3">
+                <span class="mb-1 text-muted">Bog'lanish uchun adminning telegrami</span>
+                <input class="form-control" type="text" value="<%= board.admin_telegram %>">
+            </label>
+            <div class="col-12">
+                <a class="btn btn-danger w-100" href="/admin/delete-board/<%= board.id %>">E'lonni o'chirish</a>
+            </div>
+        </form>
+
+        <h2 class="h5 mb-3">Frilanserlar</h2>
+        <table class="table table-bordered bg-white mb-3">
+            <thead>
+            <tr>
+                <th>№</th>
+                <th>Frilanser id</th>
+            </tr>
+            </thead>
+            <tbody class="border-top-0">
+            <% if (board.applicants.length) { %>
+                <% for (let [i, id] of Object.entries(board.applicants)) { %>
+                    <tr>
+                        <td><%= i + 1%></td>
+                        <td><a href="/freelancers/<%= id %>"><%= id %></a></td>
+                    </tr>
+                <% } %>
+            <% } %>
+            </tbody>
+        </table>
+        <h2 class="h5 mb-3">Loyihani tugallash</h2>
+        <form action="/admin/complete-board" method="post" class="row">
+            <input type="hidden" name="board_id" value="<%= board.id %>">
+            <label class="col-6 mb-3">
+                <span>Frilanserning id sini kiriting</span>
+                <input class="form-control" type="text" name="freelancer_id" required>
+            </label>
+            <label class="col-6 mb-3">
+                <span>Loyihaning linki</span>
+                <input class="form-control" type="text" name="project_link" required>
+            </label>
+            <div class="col-4">
+                <button class="btn btn-primary w-100" type="submit">Loyihani tugallash</button>
+            </div>
+        </form>
+    </main>
+</div>
+
+<script src="/js/bundle.js"></script>
+</body>
+</html>

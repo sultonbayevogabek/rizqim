@@ -4,9 +4,10 @@ module.exports = async (req, res) => {
             is_completed: false
         }
     })
-    res.render('boards', {
-        title: `E'lonlar | Rizqim`,
-        path: '/boards',
+
+    res.render('admin/boards', {
+        title: 'Admin Boards',
+        path: 'boards',
         user: req.user ? req.user : null,
         boards
     })

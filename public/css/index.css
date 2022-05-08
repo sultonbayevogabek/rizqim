@@ -1971,6 +1971,43 @@ button[disabled]:hover {
   color: #646975;
 }
 
+.admin {
+  display: grid;
+  grid-template-columns: 1.2fr 5fr;
+  height: 100vh;
+}
+
+.admin__sidebar {
+  height: 100%;
+  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+}
+
+.admin__main {
+  height: 100%;
+  padding: 20px;
+  overflow: auto;
+  background-color: #fff;
+}
+
+.sidebar__ul {
+  padding: 20px;
+}
+
+.sidebar__item {
+  margin-bottom: 5px;
+}
+
+.sidebar__link {
+  display: block;
+  padding: 10px;
+  color: #FFFFFF;
+  border-radius: 4px;
+}
+.sidebar__link:hover, .sidebar__link.active {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #FFFFFF;
+}
+
 .modal {
   position: fixed;
   top: 0;

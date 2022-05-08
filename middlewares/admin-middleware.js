@@ -1,7 +1,5 @@
-const { verifyToken } = require('../modules/jwt')
-
 module.exports = async (req, res, next) => {
-   if (!req.user) {
+   if (!req.user || req.user.role !== 'admin') {
       return res.redirect('/404')
    }
 

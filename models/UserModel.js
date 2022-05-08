@@ -58,7 +58,11 @@ module.exports = class Model {
          type: {
             type: Sequelize.DataTypes.ENUM('freelancer', 'user'),
             allowNull: false
-         }
+         },
+         role: {
+            type: Sequelize.DataTypes.STRING,
+            defaultValue: 'user'
+         },
       })
    }
 
@@ -212,8 +216,12 @@ module.exports = class Model {
             type: Sequelize.DataTypes.TEXT,
             allowNull: false
          },
-         phone_number: {
-            type: Sequelize.DataTypes.STRING(13),
+         img_url: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: false
+         },
+         admin_telegram: {
+            type: Sequelize.DataTypes.STRING,
             allowNull: false
          },
          budget: {
@@ -224,6 +232,31 @@ module.exports = class Model {
             type: Sequelize.DataTypes.BOOLEAN,
             defaultValue: false,
             allowNull: false
+         },
+         applicants: {
+            type: Sequelize.DataTypes.ARRAY(Sequelize.DataTypes.STRING),
+            defaultValue: [],
+            allowNull: true
+         },
+         acceptance_data: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: false
+         },
+         finish_data: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: false
+         },
+         freelancer_id: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: true
+         },
+         project_link: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: true
+         },
+         materials_link: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: true
          }
       })
    }
@@ -240,7 +273,7 @@ module.exports = class Model {
             allowNull: false
          },
          phone_number: {
-            type: Sequelize.DataTypes.STRING(13),
+            type: Sequelize.DataTypes.STRING(20),
             allowNull: false
          },
          message: {
