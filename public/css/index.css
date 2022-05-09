@@ -1496,13 +1496,8 @@ button[disabled]:hover {
   color: #FFFFFF;
 }
 
-.main--project-info .flex-container {
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.project-info {
-  width: 574px;
+.main--project-info {
+  padding-top: 30px;
 }
 
 .project-info__description, .project-info__value {
@@ -1514,13 +1509,9 @@ button[disabled]:hover {
 }
 
 .project-info__additional {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.project-info__item:first-child {
-  margin-right: 130px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
 }
 
 .project-info__heading {
@@ -1529,6 +1520,11 @@ button[disabled]:hover {
   font-size: 24px;
   line-height: 29px;
   color: #2044A0;
+}
+
+.board-details__heading {
+  padding-top: 55px;
+  color: white;
 }
 
 .info-page {

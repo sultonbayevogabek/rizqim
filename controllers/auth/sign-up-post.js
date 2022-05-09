@@ -80,7 +80,7 @@ module.exports = async (req, res) => {
         last_name: lastName,
         email: email,
         password: password,
-        type: type,
+        type: 'freelancer',
         is_verified: false
     })
 

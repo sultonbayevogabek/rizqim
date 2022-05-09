@@ -60,15 +60,13 @@ const trimText = text => {
                     <div class="card__body">
                         <h3 class="card__heading"><%= trimText(board.title)%></h3>
                         <div class="card__statistic">
-                            <% if (true) { %>
-                                <div class="card__workers">
-                                    <span><%= board.applicants.length %></span>
-                                    <img src="/img/icons/workers.svg" alt="">
-                                </div>
-                            <% } %>
+                            <div class="card__workers">
+                                <span><%= board.applicants.length %></span>
+                                <img src="/img/icons/workers.svg" alt="">
+                            </div>
                         </div>
                     </div>
-                    <a class="card__link" href="/board-details/<%= board.id %>">
+                    <a class="card__link" href="/boards/<%= board.id %>">
                         card link
                     </a>
                 </div>

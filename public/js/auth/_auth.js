@@ -4,15 +4,6 @@ import { warning } from '../general/_toaster'
 
 export default () => {
    try {
-      let userType = null
-      const userTypeLabels = selectAll('[data-type]')
-
-      userTypeLabels.forEach(label => {
-         label.addEventListener('click', e => {
-            userType = e.currentTarget.getAttribute('data-type')
-         })
-      })
-
       const registerForm = selectOne('#register-form'),
          firstNameInput = selectOne('[data-input-fname]'),
          lastNameInput = selectOne('[data-input-lname]'),
@@ -34,7 +25,7 @@ export default () => {
                lastName: lastNameInput.value,
                email: emailInput.value,
                password: passwordInput.value,
-               type: userType
+               type: 'freelancer'
             })
          })
 

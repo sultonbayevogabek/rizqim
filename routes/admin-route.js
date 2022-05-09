@@ -22,6 +22,8 @@ router.get('/delete-board/:id',  adminMiddleware, require('../controllers/admin/
 
 router.post('/complete-board',  adminMiddleware, require('../controllers/admin/admin-complete-board'))
 
+router.get('/sponsors',  adminMiddleware, require('../controllers/admin/admin-sponsors'))
+
 module.exports = {
     route: '/admin',
     router

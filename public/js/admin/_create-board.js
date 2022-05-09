@@ -10,7 +10,7 @@ export default () => {
    const boardImgInput = createBoardForm.querySelector('[data-board-img]')
    const boardAcceptanceDateInput = createBoardForm.querySelector('[data-board-acceptance-date]')
    const boardFinishDateInput = createBoardForm.querySelector('[data-board-finish-date]')
-   const boardAdminTelegramInput = createBoardForm.querySelector('[data-board-finish-date]')
+   const boardAdminTelegramInput = createBoardForm.querySelector('[data-board-admin-telegram]')
 
    createBoardForm.addEventListener('submit', async e => {
       e.preventDefault()
