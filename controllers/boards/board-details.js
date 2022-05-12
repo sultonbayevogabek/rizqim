@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
             path: '/boards',
             user: req.user ? req.user : null,
             board,
-            acceptable: new Date() > new Date(board.acceptance_data),
+            acceptable: new Date(board.acceptance_data) > new Date(),
             accepted: board.applicants.includes(req.user?.id)
         })
     } catch (e) {

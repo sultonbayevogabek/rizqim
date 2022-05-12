@@ -3,7 +3,8 @@ module.exports = async (req, res) => {
 
    const languages = await req.psql.languages.findAll({
       where: {
-         language
+         language,
+         user_id: req.user.id
       }
    })
 

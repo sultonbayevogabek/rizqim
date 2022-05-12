@@ -1500,8 +1500,14 @@ button[disabled]:hover {
   padding-top: 30px;
 }
 
+.project-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 40px;
+}
+
 .project-info__description, .project-info__value {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-weight: 300;
   font-size: 16px;
   line-height: 22px;
@@ -1510,8 +1516,8 @@ button[disabled]:hover {
 
 .project-info__additional {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }
 
 .project-info__heading {

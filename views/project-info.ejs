@@ -12,76 +12,84 @@
 <main class="main--project-info">
     <div class="container">
         <div class="project-info">
-            <h2 class="d-none">E'lon haqida batafsil</h2>
             <img width="100%" class="mb-20" src="<%= board.img_url %>" alt="">
-            <p class="project-info__description"><%= board.description %></p>
-            <div class="project-info__additional">
+            <div>
                 <div class="project-info__item">
                     <h3 class="project-info__heading">
-                        Admin bilan aloqa
+                        Loyiha haqida
                     </h3>
                     <p class="project-info__value">
-                        <%= board.admin_telegram %>
+                        <%= board.description %>
                     </p>
                 </div>
-                <div class="project-info__item">
-                    <h3 class="project-info__heading">
-                        Loyiha byudjeti
-                    </h3>
-                    <p class="project-info__value">
-                        <%= board.budget %>$
-                    </p>
-                </div>
-                <div class="project-info__item">
-                    <h3 class="project-info__heading">
-                        Qabulning oxirgi sanasi
-                    </h3>
-                    <p class="project-info__value">
-                        <%= board.acceptance_data %>
-                    </p>
-                </div>
-                <div class="project-info__item">
-                    <h3 class="project-info__heading">
-                        Tugatish sanasi
-                    </h3>
-                    <p class="project-info__value">
-                        <%= board.finish_data %>
-                    </p>
-                </div>
-                <% if (!user && acceptable) { %>
+                <div class="project-info__additional">
                     <div class="project-info__item">
                         <h3 class="project-info__heading">
-                            Loyihaga yozilish uchun avtorizatsiya qiling
+                            Admin bilan aloqa
                         </h3>
+                        <p class="project-info__value">
+                            <%= board.admin_telegram %>
+                        </p>
                     </div>
-                <% } %>
-                <% if (user && acceptable && !accepted) { %>
                     <div class="project-info__item">
                         <h3 class="project-info__heading">
-                            Loyihada qatnashish
+                            Loyiha byudjeti
                         </h3>
                         <p class="project-info__value">
-                            <a class="button button-outline" href="/boards/apply/<%= board.id %>">Loyihada qatnashish</a>
+                            <%= board.budget %>$
                         </p>
                     </div>
-                <% } %>
-                <% if (user && accepted) { %>
                     <div class="project-info__item">
                         <h3 class="project-info__heading">
-                            Loyihada materiallari
+                            Qabulning oxirgi sanasi
                         </h3>
                         <p class="project-info__value">
-                            <a class="button button-blue" href="<%= board.materials_link %>">Materiallar</a>
+                            <%= board.acceptance_data %>
                         </p>
                     </div>
-                <% } %>
-                <% if (!acceptable && !accepted) { %>
                     <div class="project-info__item">
+                        <h3 class="project-info__heading">
+                            Tugatish sanasi
+                        </h3>
                         <p class="project-info__value">
-                            <button class="button button-blue" disabled>Qabul tugagan</button>
+                            <%= board.finish_data %>
                         </p>
                     </div>
-                <% } %>
+                    <% if (!user && acceptable) { %>
+                        <div class="project-info__item">
+                            <h3 class="project-info__heading">
+                                Loyihaga yozilish uchun avtorizatsiya qiling
+                            </h3>
+                        </div>
+                    <% } %>
+                    <% if (user && acceptable && !accepted) { %>
+                        <div class="project-info__item">
+                            <h3 class="project-info__heading">
+                                Loyihada qatnashish
+                            </h3>
+                            <p class="project-info__value">
+                                <a class="button button-outline" href="/boards/apply/<%= board.id %>">Loyihada qatnashish</a>
+                            </p>
+                        </div>
+                    <% } %>
+                    <% if (user && accepted) { %>
+                        <div class="project-info__item">
+                            <h3 class="project-info__heading">
+                                Loyihada materiallari
+                            </h3>
+                            <p class="project-info__value">
+                                <a class="button button-blue" href="<%= board.materials_link %>">Materiallar</a>
+                            </p>
+                        </div>
+                    <% } %>
+                    <% if (!acceptable && !accepted) { %>
+                        <div class="project-info__item">
+                            <p class="project-info__value">
+                                <button class="button button-blue" disabled>Qabul tugagan</button>
+                            </p>
+                        </div>
+                    <% } %>
+                </div>
             </div>
         </div>
     </div>
