@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
 
         freelancers = freelancers.sort((a, b) => {
             return b.portfolios.length - a.portfolios.length
-        })s
+        })
 
         res.render('freelancers', {
             title: `Frilanserlar | Rizqim`,
