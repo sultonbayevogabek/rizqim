@@ -269,6 +269,7 @@
 }
 
 .profile__experience__delete {
+   flex-shrink: 0;
    width: 25px;
    height: 25px;
    margin-left: 10px;
@@ -279,7 +280,7 @@
 .profile__education__heading,
 .profile__language__heading {
    display: flex;
-   align-items: center;
+   align-items: flex-start;
 }
 
 .profile__language__list {

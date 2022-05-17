@@ -3,10 +3,8 @@ const adminMiddleware = require('../middlewares/admin-middleware')
 const fileUpload = require('express-fileupload')
 
 router.get('/', adminMiddleware, async (req, res) => {
-    res.redirect('/admin/dashboard')
+    res.redirect('/admin/boards')
 })
-
-router.get('/dashboard', adminMiddleware, require('../controllers/admin/admin-dashboard'))
 
 router.get('/messages', adminMiddleware, require('../controllers/admin/admin-messages'))
 
@@ -23,6 +21,12 @@ router.get('/delete-board/:id',  adminMiddleware, require('../controllers/admin/
 router.post('/complete-board',  adminMiddleware, require('../controllers/admin/admin-complete-board'))
 
 router.get('/sponsors',  adminMiddleware, require('../controllers/admin/admin-sponsors'))
+
+router.get('/completed',  adminMiddleware, require('../controllers/admin/admin-completed'))
+
+router.post('/create-sponsor',  adminMiddleware, fileUpload(), require('../controllers/admin/admin-create-sponsor'))
+
+router.get('/delete-sponsor/:id',  adminMiddleware, require('../controllers/admin/admin-delete-sponsor'))
 
 module.exports = {
     route: '/admin',

@@ -2,12 +2,13 @@ module.exports = async (req, res) => {
     try {
         const boards = await req.psql.boards.findAll({
             where: {
-                is_completed: false
+                is_completed: true
             }
         })
-        res.render('boards', {
-            title: `E'lonlar | Rizqim`,
-            path: '/boards',
+
+        res.render('admin/completed', {
+            title: 'Admin Completed',
+            path: 'completed',
             user: req.user ? req.user : null,
             boards
         })

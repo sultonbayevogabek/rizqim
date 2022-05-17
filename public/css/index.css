@@ -992,7 +992,7 @@ button[disabled]:hover {
   position: relative;
   width: 101px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-shrink: 0;
   overflow: hidden;
@@ -1504,6 +1504,7 @@ button[disabled]:hover {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 40px;
+  padding-bottom: 40px;
 }
 
 .project-info__description, .project-info__value {
@@ -1877,6 +1878,7 @@ button[disabled]:hover {
 }
 
 .profile__experience__delete {
+  flex-shrink: 0;
   width: 25px;
   height: 25px;
   margin-left: 10px;
@@ -1887,7 +1889,7 @@ button[disabled]:hover {
 .profile__education__heading,
 .profile__language__heading {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .profile__language__list {

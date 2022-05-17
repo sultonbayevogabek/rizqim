@@ -1,5 +1,14 @@
 <%- include('parts/header') %>
 
+<%
+const trimText = text => {
+    if (text.length > 25) {
+        return text.substring(0, 25) + ' ...'
+    }
+    return text
+}
+%>
+
 <header class="header header-completed">
     <%- include('components/navbar', { logo: 'white' }) %>
 
@@ -15,19 +24,22 @@
 <main class="main">
     <div class="board-list">
         <div class="grid-container">
-            <% for (let i = 0; i < 16; i++) { %>
-                <%- include('components/card', {
-                    cardTitle: 'ABM',
-                    viewsCount: 146,
-                    workersCount: null,
-                    cardType: 'bot',
-                    cardLink: '/posts/1',
-                    editable: false
-                }) %>
+            <% for (let board of boards) { %>
+                <div class="card" title="<%= board.title %>" style="background-image: url(<%= board.img_url %>)">
+                    <div class="card__body">
+                        <h3 class="card__heading"><%= trimText(board.title)%></h3>
+                        <div class="card__statistic">
+                            <div class="card__workers">
+                                <span><%= board.applicants.length %></span>
+                                <img src="/img/icons/workers.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <a class="card__link" href="/completed/<%= board.id %>">
+                        card link
+                    </a>
+                </div>
             <% } %>
-        </div>
-        <div class="pagination-container">
-            <div id="pagination"></div>
         </div>
     </div>
 </main>

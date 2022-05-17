@@ -15,7 +15,7 @@
     <%- include('sidebar') %>
     <main class="admin__main">
         <h2 class="h5 mb-3">Homiy qo'shish</h2>
-        <form class="row mb-5" id="create-board">
+        <form class="row mb-5" id="create-sponsor">
             <label class="col-6 mb-3">
                 <span class="mb-1 text-muted">Homiyning veb manzili</span>
                 <input class="form-control" type="url" placeholder="Loyihaning nomini kiriting" data-sponsor-url value="https://.uz" required>
@@ -39,6 +39,15 @@
             </tr>
             </thead>
             <tbody class="border-top-0">
+            <% for (let sponsor of sponsors) { %>
+                <tr>
+                    <td><a target="_blank" href="<%= sponsor.link%>"><%= sponsor.link%></a></td>
+                    <td><img style="width: 100px" src="<%= sponsor.logo %>"></td>
+                    <td>
+                        <a class="btn btn-danger" href="/admin/delete-sponsor/<%= sponsor.id%>">O'chirish</a>
+                    </td>
+                </tr>
+            <% } %>
             </tbody>
         </table>
     </main>

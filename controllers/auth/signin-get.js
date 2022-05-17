@@ -1,7 +1,12 @@
 module.exports = async (req, res) => {
-    res.render('signin', {
-        title: 'Kirish | Rizqim',
-        path: '/signin',
-        user: req.user ? req.user : null
-    })
+    try {
+        res.render('signin', {
+            title: 'Kirish | Rizqim',
+            path: '/signin',
+            user: req.user ? req.user : null
+        })
+    } catch (e) {
+        res.redirect('/404')
+    }
+
 }

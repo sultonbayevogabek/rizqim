@@ -1,5 +1,4 @@
 module.exports = async (req, res) => {
-   console.log(req.body)
    const {
       name,
       phone_number,

@@ -1,0 +1,56 @@
+<%- include('parts/header') %>
+
+<header class="header header-contact">
+    <%- include('components/navbar', { logo: 'white' }) %>
+    <div class="container">
+        <h1 class="board-details__heading">
+            <%= board.title %>
+        </h1>
+    </div>
+</header>
+
+<main class="main--project-info">
+    <div class="container">
+        <div class="project-info">
+            <img width="100%" class="mb-20" src="<%= board.img_url %>" alt="">
+            <div class="project-info__additional">
+                <div class="project-info__item">
+                    <h3 class="project-info__heading">
+                        Loyiha byudjeti
+                    </h3>
+                    <p class="project-info__value">
+                        <%= board.budget %>$
+                    </p>
+                </div>
+                <div class="project-info__item">
+                    <h3 class="project-info__heading">
+                        Tugagan sana
+                    </h3>
+                    <p class="project-info__value">
+                        <%= board.updatedAt.getFullYear() %> - <%= board.updatedAt.getMonth() %>
+                        - <%= board.updatedAt.getDate() %>
+                    </p>
+                </div>
+                <div class="project-info__item">
+                    <h3 class="project-info__heading">
+                        Frilanser
+                    </h3>
+                    <p class="project-info__value">
+                        <a href="/freelancers/<%= freelancer.id%>"><%= freelancer.first_name %> <%= freelancer.first_name %></a>
+                    </p>
+                </div>
+                <div class="project-info__item">
+                    <h3 class="project-info__heading">
+                        Loyihaga havola
+                    </h3>
+                    <p class="project-info__value">
+                        <a target="_blank" href="<%= board.project_link %>"><%= board.project_link %></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('components/footer') %>
+<%- include('parts/footer') %>

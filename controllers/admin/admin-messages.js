@@ -1,10 +1,14 @@
 module.exports = async (req, res) => {
-    const messages = await req.psql.messages.findAll()
+    try {
+        const messages = await req.psql.messages.findAll()
 
-    res.render('admin/messages', {
-        title: 'Xabarlar',
-        path: 'messages',
-        user: req.user ? req.user : null,
-        messages
-    })
+        res.render('admin/messages', {
+            title: 'Xabarlar',
+            path: 'messages',
+            user: req.user ? req.user : null,
+            messages
+        })
+    } catch (e) {
+        res.redirect('/404')
+    }
 }
