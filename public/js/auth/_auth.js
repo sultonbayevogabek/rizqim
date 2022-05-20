@@ -33,7 +33,7 @@ export default () => {
          registerSubmitBtn.removeAttribute('disabled')
 
          if (response.ok) {
-            window.location.href = 'http://localhost:5000/signin'
+            window.location.href = 'https://rizqim.uz/signin'
          }
 
          if (!response.ok) {

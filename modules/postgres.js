@@ -5,7 +5,9 @@ const {
 } = require('../models/UserModel')
 
 const sequelize = new Sequelize(DB_URL, {
-   logging: false
+   logging: sql => {
+      console.log('SQL', sql)
+   }
 })
 
 module.exports = async function () {
@@ -68,6 +70,6 @@ module.exports = async function () {
       }
    })
 
-   await sequelize.sync({ force: false })
+   await sequelize.sync({ force: true })
    return db
 }
